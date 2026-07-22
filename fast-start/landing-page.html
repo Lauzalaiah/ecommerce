@@ -1,0 +1,372 @@
+<title>PattesZen — Liste d'attente</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --pine: #1b2a22;
+    --pine-soft: #33473c;
+    --sage: #5b7b63;
+    --sage-deep: #405a49;
+    --porcelain: #eef1ec;
+    --surface: #ffffff;
+    --clay: #a85c3f;
+    --clay-deep: #8a4a32;
+    --gold: #c79a44;
+    --line: rgba(27, 42, 34, 0.12);
+    --shadow: rgba(27, 42, 34, 0.14);
+    color-scheme: light;
+  }
+
+  :root[data-theme="dark"],
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --pine: #eef1ea;
+      --pine-soft: #c6d0c8;
+      --sage: #86a892;
+      --sage-deep: #6c9078;
+      --porcelain: #101913;
+      --surface: #17221b;
+      --clay: #d3805d;
+      --clay-deep: #e59a75;
+      --gold: #dcb666;
+      --line: rgba(238, 241, 234, 0.14);
+      --shadow: rgba(0, 0, 0, 0.5);
+      color-scheme: dark;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --pine: #eef1ea;
+      --pine-soft: #c6d0c8;
+      --sage: #86a892;
+      --sage-deep: #6c9078;
+      --porcelain: #101913;
+      --surface: #17221b;
+      --clay: #d3805d;
+      --clay-deep: #e59a75;
+      --gold: #dcb666;
+      --line: rgba(238, 241, 234, 0.14);
+      --shadow: rgba(0, 0, 0, 0.5);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="light"] {
+    --pine: #1b2a22;
+    --pine-soft: #33473c;
+    --sage: #5b7b63;
+    --sage-deep: #405a49;
+    --porcelain: #eef1ec;
+    --surface: #ffffff;
+    --clay: #a85c3f;
+    --clay-deep: #8a4a32;
+    --gold: #c79a44;
+    --line: rgba(27, 42, 34, 0.12);
+    --shadow: rgba(27, 42, 34, 0.14);
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--porcelain);
+    color: var(--pine);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .field {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field::before {
+    content: "";
+    position: absolute;
+    top: -18vw;
+    right: -14vw;
+    width: 52vw;
+    height: 52vw;
+    max-width: 640px;
+    max-height: 640px;
+    background: radial-gradient(circle at 40% 40%, var(--sage) 0%, transparent 72%);
+    opacity: 0.28;
+    filter: blur(2px);
+    pointer-events: none;
+  }
+
+  header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1.25rem, 5vw, 3rem) 0;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+
+  .wordmark svg { width: 22px; height: 22px; color: var(--clay); }
+
+  .eyebrow-pill {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--sage-deep);
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: clamp(2rem, 6vw, 3rem) clamp(1.25rem, 6vw, 3rem);
+  }
+
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+    animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero { animation: none; }
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--clay-deep);
+    font-weight: 600;
+    margin: 0 0 1.1rem;
+  }
+
+  h1 {
+    font-family: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", Georgia, serif;
+    font-size: clamp(2.3rem, 5.6vw, 3.6rem);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.15rem;
+    text-wrap: balance;
+    color: var(--pine);
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--sage-deep);
+  }
+
+  .dek {
+    font-size: clamp(1.02rem, 2vw, 1.2rem);
+    line-height: 1.55;
+    color: var(--pine-soft);
+    max-width: 46ch;
+    margin: 0 0 2.25rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: clamp(1.5rem, 3vw, 2.1rem);
+    box-shadow: 0 24px 48px -28px var(--shadow);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+
+  .card-copy p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--pine-soft);
+  }
+
+  .code-stamp {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--clay-deep);
+    letter-spacing: 0.03em;
+    margin-bottom: 0.35rem;
+  }
+
+  .code-stamp .tag {
+    border: 1.5px dashed var(--clay);
+    border-radius: 8px;
+    padding: 0.15rem 0.55rem;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--clay);
+    color: #fdf8f4;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.95rem 1.6rem;
+    border-radius: 12px;
+    white-space: nowrap;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:focus-visible {
+    outline: 2px solid var(--sage);
+    outline-offset: 3px;
+  }
+
+  .cta svg { width: 18px; height: 18px; }
+
+  .fallback {
+    margin: 0.9rem 0 0;
+    font-size: 0.8rem;
+  }
+
+  .fallback a {
+    color: var(--pine-soft);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .trust-strip {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.25rem;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 6vw, 3rem) clamp(2.5rem, 6vw, 3.5rem);
+    width: 100%;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--pine-soft);
+  }
+
+  .trust-item svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    color: var(--sage-deep);
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--line);
+    padding: 1.5rem clamp(1.25rem, 6vw, 3rem);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--pine-soft);
+  }
+
+  @media (max-width: 560px) {
+    .card { flex-direction: column; align-items: stretch; text-align: left; }
+    .cta { justify-content: center; }
+  }
+</style>
+
+<div class="field">
+  <header>
+    <div class="wordmark">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <circle cx="6.5" cy="8" r="2.2"/><circle cx="12" cy="5.5" r="2.2"/><circle cx="17.5" cy="8" r="2.2"/>
+        <path d="M12 10.5c-3.3 0-6 2.4-6 5.3 0 1.9 1.6 3.2 3.6 3.2.9 0 1.6-.3 2.4-.3s1.5.3 2.4.3c2 0 3.6-1.3 3.6-3.2 0-2.9-2.7-5.3-6-5.3z"/>
+      </svg>
+      PattesZen
+    </div>
+    <span class="eyebrow-pill">Ouverture prochaine</span>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="eyebrow">Bien-être animal &middot; croquettes, soins &amp; accessoires</p>
+      <h1>Ce que vous alliez chercher en animalerie, <em>livré chez vous.</em></h1>
+      <p class="dek">
+        Croquettes, friandises, compléments et soins sélectionnés pour la santé de votre chien ou de votre chat.
+        La boutique ouvre bientôt — inscrivez-vous pour être averti en premier et recevoir une offre de lancement.
+      </p>
+
+      <div class="card">
+        <div class="card-copy">
+          <div class="code-stamp">Réservé aux inscrits <span class="tag">BIENVENUE10</span></div>
+          <p>-10% sur votre première commande, dès l'ouverture de la boutique.</p>
+        </div>
+        <a class="cta" id="waitlist-cta" href="#" target="_blank" rel="noopener">
+          Rejoindre la liste d'attente
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <p class="fallback">Vous préférez écrire directement ? <a href="mailto:bonjour@pattes-zen.fr">bonjour@pattes-zen.fr</a></p>
+    </div>
+  </main>
+
+  <div class="trust-strip">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      Livraison en 24-48h
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c4 3 7 6 7 10a7 7 0 0 1-14 0c0-4 3-7 7-10z"/></svg>
+      Sélection sans additifs superflus
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+      Satisfait ou remboursé 30 jours
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg>
+      Paiement 100% sécurisé
+    </div>
+  </div>
+
+  <footer>
+    <span>PattesZen — bien-être animal</span>
+    <span>Places limitées pour l'offre de lancement</span>
+  </footer>
+</div>
+
+<script>
+  // Remplacer par le lien du formulaire créé (Google Forms ou équivalent) — voir fast-start/README-landing-page.md
+  var WAITLIST_FORM_URL = "https://forms.gle/REMPLACE_PAR_TON_LIEN";
+  document.getElementById("waitlist-cta").setAttribute("href", WAITLIST_FORM_URL);
+</script>

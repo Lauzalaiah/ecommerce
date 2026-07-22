@@ -6,6 +6,8 @@ Suis les étapes dans l'ordre. Chaque étape indique clairement ce qui est déj�
 
 Si l'objectif immédiat est de "faire tes premiers euros", commence par `fast-start/stripe-payment-link-quickstart.md`. Ça prend moins d'une heure et ça ne coûte rien tant qu'il n'y a pas de vente. Tu peux faire ça en parallèle des étapes suivantes.
 
+Une page de liste d'attente est déjà en ligne et partageable dès maintenant : https://claude.ai/code/artifact/7718947d-bc93-4fa2-b690-83ed2b4f8ce8 — colle ce lien en bio Instagram/TikTok ou envoie-le à ton entourage pour commencer à capter des inscriptions avant même l'ouverture. Il te reste juste à brancher un formulaire Google Forms gratuit derrière (2-3 minutes, voir `fast-start/README-landing-page.md`) pour recevoir réellement les emails.
+
 ## Étape 1 — Compte Shopify
 
 1. Crée un compte sur shopify.com (ou réactive l'ancien si tu y as encore accès).
@@ -26,6 +28,8 @@ Suis `catalog/README.md` : importer `catalog/products_import.csv` (15 produits c
 
 Suis `marketing/supplier-sourcing-alibaba-guide.md`. Résumé : le dropshipping (via DSers ou CJ Dropshipping, connectés à des fournisseurs Alibaba/AliExpress) permet de vendre **sans acheter de stock à l'avance** — ça règle directement le problème "je payais la boutique avant d'avoir des clients". Attention particulière si tu vends des croquettes/friandises : ce sont des aliments soumis à réglementation à l'import, contrairement aux accessoires — le guide détaille ce point et par où commencer sans risque (accessoires d'abord, alimentaire une fois la démarche réglementaire vérifiée).
 
+Tu pars avec un avantage : un contact fournisseur déjà éprouvé. `marketing/supplier-outreach-message.md` contient un message prêt à envoyer (FR/EN) pour transformer cette relation ponctuelle en partenariat régulier, avec les bonnes questions à poser (catalogue, tarifs par palier, dropshipping ou gros, certificats). Utilise `marketing/partner-outreach-tracker.csv` pour suivre cet échange et les autres partenariats locaux du plan d'acquisition.
+
 ## Étape 5 — Paiements
 
 Dans l'admin Shopify → **Paramètres → Paiements** : active Shopify Payments (ou Stripe/PayPal en alternative) pour encaisser par carte. Aucune donnée bancaire n'est à me transmettre, c'est une étape que tu dois faire toi-même dans l'admin.
@@ -42,13 +46,14 @@ C'est le cœur de `marketing/` :
 
 ## Sur les "agents" qui démarchent des clients
 
-Ce point mérite d'être dit clairement plutôt que laissé dans le flou : il n'existe pas d'outil légitime (IA ou non) capable d'aller démarcher automatiquement de vrais clients humains à ta place sur les réseaux sociaux, par téléphone ou par message — les plateformes l'interdisent explicitement (spam, usurpation, RGPD pour les emails/téléphones), et ça se retourne généralement contre la boutique (comptes bannis, mauvaise réputation) plutôt que de générer de vraies ventes durables.
+Il n'existe pas d'outil légitime (IA ou non) capable d'aller démarcher automatiquement de vrais clients humains à ta place par message privé ou par téléphone — les plateformes l'interdisent explicitement (spam, usurpation, RGPD), et ça se retourne généralement contre la boutique (comptes bannis) plutôt que de générer de vraies ventes durables.
 
-Ce que ce dépôt fournit à la place, et qui produit un effet réellement comparable en pratique : du contenu prêt à publier, des publicités prêtes à lancer, des emails automatisés une fois configurés (ils tournent ensuite sans intervention), et un plan d'action concret. C'est la version qui marche et qui ne met pas ta boutique en danger.
+Ce qui existe réellement, et qui est maintenant en place dans ce dépôt : `automation/` publie automatiquement 3 fois par semaine sur ta Page Facebook (et Instagram si tu ajoutes des photos) le contenu de `automation/content_calendar.json`, via l'API officielle Meta — le même principe que Buffer, mais gratuit et sous ton contrôle total. Ça ne remplace pas la prospection individuelle (interdite/inefficace), mais ça fait tourner ta présence en ligne sans que tu aies à publier toi-même chaque jour, une fois les identifiants Meta configurés (10-15 minutes, voir `automation/README.md`).
 
 ## Ce qu'il reste uniquement à ta charge
 
 - Créer les comptes (Shopify, Stripe, réseaux sociaux, app de dropshipping) — identité et moyens de paiement requis, je ne peux pas les créer à ta place.
+- Générer tes jetons d'accès Meta pour l'automatisation réseaux sociaux (`automation/README.md`) et créer le Google Form de la liste d'attente (`fast-start/README-landing-page.md`) — ces deux étapes prennent quelques minutes chacune mais demandent tes propres comptes.
 - Choisir et valider un fournisseur réel, y compris la vérification réglementaire pour l'alimentaire.
 - Répondre aux messages et commandes clients au quotidien.
 - Décider du budget publicitaire réel à engager, et quand.

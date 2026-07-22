@@ -1,0 +1,85 @@
+{% style %}
+  .testimonials-{{ section.id }} {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .testimonials-{{ section.id }} .testimonials-heading {
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+  .testimonials-{{ section.id }} .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .testimonials-{{ section.id }} .testimonial-card {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .testimonials-{{ section.id }} .testimonial-card__stars {
+    color: #D98B5F;
+    letter-spacing: 2px;
+    margin: 0 0 0.75rem;
+  }
+  .testimonials-{{ section.id }} .testimonial-card__quote {
+    margin: 0 0 1rem;
+    font-style: italic;
+  }
+  .testimonials-{{ section.id }} .testimonial-card__author {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+{% endstyle %}
+
+<div class="testimonials-{{ section.id }} color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="testimonials-heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  <div class="testimonials-grid">
+    {%- for block in section.blocks -%}
+      <div class="testimonial-card" {{ block.shopify_attributes }}>
+        <div class="testimonial-card__stars" aria-hidden="true">
+          {%- for i in (1..5) -%}{% if i <= block.settings.rating %}★{% else %}☆{% endif %}{%- endfor -%}
+        </div>
+        <p class="testimonial-card__quote">"{{ block.settings.quote }}"</p>
+        <p class="testimonial-card__author">{{ block.settings.author }}{% if block.settings.pet_name != blank %} — {{ block.settings.pet_name }}{% endif %}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Avis clients",
+  "tag": "section",
+  "class": "section-testimonials",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Ils nous font confiance" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-2" }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Avis",
+      "settings": [
+        { "type": "range", "id": "rating", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Avis", "default": "Mon chien adore, et je vois vraiment la différence sur son poil." },
+        { "type": "text", "id": "author", "label": "Nom du client", "default": "Camille" },
+        { "type": "text", "id": "pet_name", "label": "Nom de l'animal (optionnel)", "default": "Rex" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "testimonial", "settings": { "rating": 5, "quote": "Mon chien adore, et je vois vraiment la différence sur son poil.", "author": "Camille", "pet_name": "Rex" } },
+      { "type": "testimonial", "settings": { "rating": 5, "quote": "Livraison rapide et mon chat n'a jamais aussi bien mangé.", "author": "Julien", "pet_name": "Nouki" } },
+      { "type": "testimonial", "settings": { "rating": 4, "quote": "Bon rapport qualité-prix, je recommande pour les compléments.", "author": "Sophie", "pet_name": "" } }
+    ]
+  },
+  "presets": [
+    { "name": "Avis clients" }
+  ]
+}
+{% endschema %}

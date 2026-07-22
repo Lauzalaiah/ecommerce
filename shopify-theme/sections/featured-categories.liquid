@@ -1,0 +1,88 @@
+{% style %}
+  .categories-{{ section.id }} {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .categories-{{ section.id }} .categories-heading {
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+  .categories-{{ section.id }} .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .categories-{{ section.id }} .category-card {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    text-decoration: none;
+  }
+  .categories-{{ section.id }} .category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .categories-{{ section.id }} .category-card__label {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.55));
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+{% endstyle %}
+
+<div class="categories-{{ section.id }} color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="categories-heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  <div class="categories-grid">
+    {%- for block in section.blocks -%}
+      <a href="{{ block.settings.link | default: '#' }}" class="category-card" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+        {%- endif -%}
+        <span class="category-card__label">{{ block.settings.label }}</span>
+      </a>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Univers Chien/Chat/Bien-être",
+  "tag": "section",
+  "class": "section-featured-categories",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Trouvez ce qu'il faut pour votre compagnon" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Catégorie",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "label", "label": "Nom", "default": "Chiens" },
+        { "type": "url", "id": "link", "label": "Lien vers la collection" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "category", "settings": { "label": "Chiens" } },
+      { "type": "category", "settings": { "label": "Chats" } },
+      { "type": "category", "settings": { "label": "Compléments & santé" } },
+      { "type": "category", "settings": { "label": "Hygiène & soin" } }
+    ]
+  },
+  "presets": [
+    { "name": "Univers Chien/Chat/Bien-être" }
+  ]
+}
+{% endschema %}

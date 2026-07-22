@@ -1,0 +1,63 @@
+{% style %}
+  .trust-badges-{{ section.id }} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+  .trust-badges-{{ section.id }} .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .trust-badges-{{ section.id }} .trust-badge svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+{% endstyle %}
+
+<div class="trust-badges-{{ section.id }} color-{{ section.settings.color_scheme }}">
+  {%- for block in section.blocks -%}
+    <div class="trust-badge" {{ block.shopify_attributes }}>
+      {% render 'icon-paw' %}
+      <span>{{ block.settings.text }}</span>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Réassurance",
+  "tag": "section",
+  "class": "section-trust-badges",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Élément de réassurance",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Texte", "default": "Paiement 100 % sécurisé" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "badge", "settings": { "text": "Paiement 100 % sécurisé" } },
+      { "type": "badge", "settings": { "text": "Expédié depuis la France" } },
+      { "type": "badge", "settings": { "text": "Service client réactif" } },
+      { "type": "badge", "settings": { "text": "Satisfait ou remboursé 30 jours" } }
+    ]
+  },
+  "presets": [
+    { "name": "Réassurance" }
+  ]
+}
+{% endschema %}

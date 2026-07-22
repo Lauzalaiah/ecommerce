@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product"
+    },
+    "product_benefits": {
+      "type": "product-benefits"
+    },
+    "faq": {
+      "type": "faq-accordion",
+      "settings": {
+        "heading": "Questions sur ce produit"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "heading": "Ce qu'en pensent nos clients"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_benefits",
+    "faq",
+    "testimonials"
+  ]
+}

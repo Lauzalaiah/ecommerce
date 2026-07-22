@@ -1,0 +1,77 @@
+{% style %}
+  .faq-{{ section.id }} {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  .faq-{{ section.id }} .faq-heading {
+    text-align: center;
+    margin: 0 0 1.5rem;
+  }
+  .faq-{{ section.id }} details {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 1rem 0;
+  }
+  .faq-{{ section.id }} summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .faq-{{ section.id }} summary::after {
+    content: "+";
+    font-weight: 400;
+  }
+  .faq-{{ section.id }} details[open] summary::after {
+    content: "−";
+  }
+  .faq-{{ section.id }} .faq-answer {
+    margin: 0.75rem 0 0;
+    opacity: 0.85;
+  }
+{% endstyle %}
+
+<div class="faq-{{ section.id }} color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="faq-heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- for block in section.blocks -%}
+    <details {{ block.shopify_attributes }}>
+      <summary>{{ block.settings.question }}</summary>
+      <div class="faq-answer">{{ block.settings.answer }}</div>
+    </details>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Questions fréquentes",
+  "tag": "section",
+  "class": "section-faq",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Questions fréquentes" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Quel est le délai de livraison ?" },
+        { "type": "richtext", "id": "answer", "label": "Réponse", "default": "<p>Vos commandes sont expédiées sous 24h et livrées en 24-48h en France métropolitaine.</p>" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "question", "settings": { "question": "Quel est le délai de livraison ?", "answer": "<p>Vos commandes sont expédiées sous 24h et livrées en 24-48h en France métropolitaine.</p>" } },
+      { "type": "question", "settings": { "question": "Puis-je changer de produit en cours d'abonnement ?", "answer": "<p>Oui, vous pouvez modifier ou annuler votre abonnement à tout moment depuis votre espace client.</p>" } },
+      { "type": "question", "settings": { "question": "Que faire si mon animal n'aime pas le produit ?", "answer": "<p>Nous vous remboursons sous 30 jours, sans condition.</p>" } }
+    ]
+  },
+  "presets": [
+    { "name": "Questions fréquentes" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Le bien-être de votre compagnon, livré chez vous",
+        "subheading": "<p>Croquettes, friandises et soins sélectionnés pour la santé de votre chien ou chat.</p>",
+        "button_label": "Découvrir la boutique",
+        "button_link": "/collections/all",
+        "button_label_2": "Notre engagement bien-être",
+        "button_link_2": "/pages/notre-engagement"
+      }
+    },
+    "value_props": {
+      "type": "value-props"
+    },
+    "categories": {
+      "type": "featured-categories"
+    },
+    "best_sellers": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Nos meilleures ventes",
+        "collection": "",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "show_view_all": true
+      }
+    },
+    "subscribe_save": {
+      "type": "subscribe-save"
+    },
+    "testimonials": {
+      "type": "testimonials"
+    },
+    "trust_badges": {
+      "type": "trust-badges"
+    },
+    "newsletter": {
+      "type": "newsletter"
+    }
+  },
+  "order": [
+    "hero",
+    "value_props",
+    "categories",
+    "best_sellers",
+    "subscribe_save",
+    "testimonials",
+    "trust_badges",
+    "newsletter"
+  ]
+}

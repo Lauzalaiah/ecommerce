@@ -1,0 +1,61 @@
+{% style %}
+  .product-benefits-{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .product-benefits-{{ section.id }} .benefit svg {
+    width: 28px;
+    height: 28px;
+    margin: 0 auto 0.5rem;
+  }
+  .product-benefits-{{ section.id }} .benefit p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+{% endstyle %}
+
+<div class="product-benefits-{{ section.id }} color-{{ section.settings.color_scheme }}">
+  {%- for block in section.blocks -%}
+    <div class="benefit" {{ block.shopify_attributes }}>
+      {% render 'icon-paw' %}
+      <p>{{ block.settings.label }}</p>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Bénéfices produit",
+  "tag": "section",
+  "class": "section-product-benefits",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Texte", "default": "Sans céréales" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "benefit", "settings": { "label": "Sans céréales" } },
+      { "type": "benefit", "settings": { "label": "Fabriqué en Europe" } },
+      { "type": "benefit", "settings": { "label": "Riche en protéines animales" } },
+      { "type": "benefit", "settings": { "label": "Recommandé par des vétérinaires" } }
+    ]
+  },
+  "presets": [
+    { "name": "Bénéfices produit" }
+  ]
+}
+{% endschema %}

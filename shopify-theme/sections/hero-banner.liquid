@@ -1,0 +1,98 @@
+{% style %}
+  .hero-{{ section.id }} {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: {{ section.settings.min_height }}px;
+    background: {{ section.settings.background_color }};
+    overflow: hidden;
+  }
+  .hero-{{ section.id }}__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: {{ section.settings.image_opacity | divided_by: 100.0 }};
+  }
+  .hero-{{ section.id }}__content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    text-align: {{ section.settings.text_alignment }};
+    padding: 4rem 2rem;
+  }
+  .hero-{{ section.id }}__heading {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.1;
+    margin: 0 0 1rem;
+    color: {{ section.settings.text_color }};
+  }
+  .hero-{{ section.id }}__subheading {
+    font-size: 1.125rem;
+    margin: 0 0 2rem;
+    color: {{ section.settings.text_color }};
+  }
+  .hero-{{ section.id }}__cta {
+    display: inline-flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: {{ section.settings.text_alignment }};
+  }
+{% endstyle %}
+
+<div class="hero-{{ section.id }} color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.image != blank -%}
+    {{ section.settings.image | image_url: width: 2000 | image_tag: class: 'hero-' | append: section.id | append: '__image', loading: 'eager', fetchpriority: 'high' }}
+  {%- endif -%}
+
+  <div class="hero-{{ section.id }}__content">
+    {%- if section.settings.heading != blank -%}
+      <h1 class="hero-{{ section.id }}__heading">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <div class="hero-{{ section.id }}__subheading">{{ section.settings.subheading }}</div>
+    {%- endif -%}
+    <div class="hero-{{ section.id }}__cta">
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="button button--primary">
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.button_label_2 != blank -%}
+        <a href="{{ section.settings.button_link_2 | default: '#' }}" class="button button--secondary">
+          {{ section.settings.button_label_2 }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero bien-être",
+  "tag": "section",
+  "class": "section-hero-bienetre",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image de fond" },
+    { "type": "range", "id": "image_opacity", "label": "Opacité de l'image", "min": 20, "max": 100, "step": 5, "default": 90 },
+    { "type": "range", "id": "min_height", "label": "Hauteur minimale (px)", "min": 300, "max": 800, "step": 20, "default": 520 },
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "default": "Le bien-être de votre compagnon, livré chez vous" },
+    { "type": "richtext", "id": "subheading", "label": "Sous-titre", "default": "<p>Croquettes, friandises et soins sélectionnés pour la santé de votre chien ou chat.</p>" },
+    { "type": "text", "id": "button_label", "label": "Bouton principal — texte", "default": "Découvrir la boutique" },
+    { "type": "url", "id": "button_link", "label": "Bouton principal — lien" },
+    { "type": "text", "id": "button_label_2", "label": "Bouton secondaire — texte", "default": "Notre engagement bien-être" },
+    { "type": "url", "id": "button_link_2", "label": "Bouton secondaire — lien" },
+    { "type": "select", "id": "text_alignment", "label": "Alignement du texte", "default": "left", "options": [
+      { "value": "left", "label": "Gauche" },
+      { "value": "center", "label": "Centré" }
+    ]},
+    { "type": "color", "id": "background_color", "label": "Couleur de fond", "default": "#FAF7F2" },
+    { "type": "color", "id": "text_color", "label": "Couleur du texte", "default": "#2E2A26" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-1" }
+  ],
+  "presets": [
+    { "name": "Hero bien-être" }
+  ]
+}
+{% endschema %}

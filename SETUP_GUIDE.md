@@ -38,10 +38,12 @@ Dans l'admin Shopify → **Paramètres → Paiements** : active Shopify Payments
 
 ## Étape 6 — Trouver tes premiers clients
 
-C'est le cœur de `marketing/` :
+**Si tu ne veux pas faire de contenu vidéo**, commence par `marketing/strategie-sans-contenu-video.md` — ça réoriente vers les canaux qui captent un besoin déjà exprimé (recherche Google, vétérinaires, marketplaces) plutôt que les réseaux sociaux organiques, dont la portée sans vidéo est aujourd'hui limitée.
+
+Le reste de `marketing/` :
 
 - `marketing/launch-plan-30-60-90.md` — le plan d'action jour par jour, pensé pour zéro/petit budget au départ.
-- `marketing/social-media-calendar.md` — 4 semaines de posts prêts à publier.
+- `marketing/social-media-calendar.md` — 4 semaines de posts prêts à publier (utile en complément, pas comme moteur principal sans vidéo).
 - `marketing/ad-copy-templates.md` — accroches publicitaires prêtes, à activer seulement une fois les premières ventes organiques obtenues.
 - `marketing/email-flows.md` — séquences email (bienvenue, panier abandonné, post-achat, réactivation).
 - `marketing/seo-guide.md` — trafic gratuit sur la durée.

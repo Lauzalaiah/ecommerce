@@ -2,6 +2,8 @@
 
 Pensé pour la contrainte réelle : la dernière fois, l'abonnement Shopify tombait avant que les clients arrivent. Donc ici, **priorité aux canaux gratuits ou quasi gratuits** avant toute publicité payante, et on ne remonte en gamme d'abonnement Shopify qu'une fois des ventes réelles encaissées (voir `../fast-start/stripe-payment-link-quickstart.md` pour vendre dès le jour 1).
 
+**Si tu ne veux pas produire de contenu vidéo** (Reels/TikTok), les étapes "réseaux sociaux" ci-dessous auront une portée organique limitée — lis d'abord `strategie-sans-contenu-video.md`, qui réordonne les canaux vers ceux basés sur un besoin déjà exprimé (recherche Google, vétérinaires, marketplaces) plutôt que sur du contenu qui doit créer l'envie.
+
 ## Jours 1-7 — Fondations gratuites
 
 - Créer/réactiver les comptes Instagram et Facebook de la boutique (bio + lien vers le lien de paiement ou la boutique).

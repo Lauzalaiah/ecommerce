@@ -44,11 +44,16 @@ C'est le cœur de `marketing/` :
 - `marketing/email-flows.md` — séquences email (bienvenue, panier abandonné, post-achat, réactivation).
 - `marketing/seo-guide.md` — trafic gratuit sur la durée.
 
-## Sur les "agents" qui démarchent des clients
+## Sur les "agents IA" qui trouvent des clients
 
-Il n'existe pas d'outil légitime (IA ou non) capable d'aller démarcher automatiquement de vrais clients humains à ta place par message privé ou par téléphone — les plateformes l'interdisent explicitement (spam, usurpation, RGPD), et ça se retourne généralement contre la boutique (comptes bannis) plutôt que de générer de vraies ventes durables.
+Des plateformes qui vendent des "agents IA marketing" (blink.new et d'autres) existent réellement — mais sous le capot, ces agents font de la recherche web, de la génération de contenu, ou de l'automatisation d'emails B2B : la même catégorie de choses que ce qui suit, pas un moyen de contourner les règles des plateformes. Envoyer des messages non sollicités en masse à des particuliers reste une violation des CGU (comptes bannis) et le démarchage téléphonique reste encadré par la loi, quel que soit l'outil utilisé pour l'automatiser.
 
-Ce qui existe réellement, et qui est maintenant en place dans ce dépôt : `automation/` publie automatiquement 3 fois par semaine sur ta Page Facebook (et Instagram si tu ajoutes des photos) le contenu de `automation/content_calendar.json`, via l'API officielle Meta — le même principe que Buffer, mais gratuit et sous ton contrôle total. Ça ne remplace pas la prospection individuelle (interdite/inefficace), mais ça fait tourner ta présence en ligne sans que tu aies à publier toi-même chaque jour, une fois les identifiants Meta configurés (10-15 minutes, voir `automation/README.md`).
+Deux agents légitimes sont en place dans `automation/` :
+
+- **Publication automatique** : 3 fois par semaine sur ta Page Facebook (et Instagram si tu ajoutes des photos), via l'API officielle Meta — le principe de Buffer, gratuit et sous ton contrôle total.
+- **Recherche de prospects locaux** : sur simple déclenchement (tu indiques une ville), il interroge l'API Google Places et ajoute automatiquement les vétérinaires, toiletteurs, animaleries et éducateurs canins trouvés à `marketing/partner-outreach-tracker.csv`, prêts à être contactés avec le message de `marketing/supplier-outreach-message.md`.
+
+Les deux nécessitent 10-15 minutes de configuration une fois (tes propres identifiants Meta/Google) — voir `automation/README.md`. Le contact reste volontaire et humain : c'est la limite légitime, pas une limite technique de ce dépôt.
 
 ## Ce qu'il reste uniquement à ta charge
 

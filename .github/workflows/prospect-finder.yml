@@ -1,0 +1,37 @@
+name: Recherche de prospects locaux
+
+on:
+  workflow_dispatch:
+    inputs:
+      ville:
+        description: "Ville ou zone à prospecter (ex. Lyon, France)"
+        required: true
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install -r automation/requirements.txt
+
+      - name: Chercher des partenaires locaux
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          PROSPECT_CITY: ${{ github.event.inputs.ville }}
+        run: python automation/prospect_finder.py
+
+      - name: Committer les nouveaux prospects
+        run: |
+          git config user.name "prospect-finder-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add marketing/partner-outreach-tracker.csv
+          git diff --cached --quiet || git commit -m "Ajout de prospects locaux (${{ github.event.inputs.ville }})"
+          git push

@@ -8,6 +8,8 @@ Si l'objectif immédiat est de "faire tes premiers euros", commence par `fast-st
 
 Une page de liste d'attente est déjà en ligne et partageable dès maintenant : https://claude.ai/code/artifact/7718947d-bc93-4fa2-b690-83ed2b4f8ce8 — colle ce lien en bio Instagram/TikTok ou envoie-le à ton entourage pour commencer à capter des inscriptions avant même l'ouverture. Il te reste juste à brancher un formulaire Google Forms gratuit derrière (2-3 minutes, voir `fast-start/README-landing-page.md`) pour recevoir réellement les emails.
 
+Aucune valeur à choisir toi-même pour les comptes à créer (Google Form, Shopify, Meta, Google Cloud, Stripe) : `fast-start/copy-paste-checklist.md` te donne tous les noms/réglages déjà décidés, prêts à coller.
+
 ## Étape 1 — Compte Shopify
 
 1. Crée un compte sur shopify.com (ou réactive l'ancien si tu y as encore accès).

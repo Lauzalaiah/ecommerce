@@ -20,6 +20,8 @@ Aucune valeur à choisir toi-même pour les comptes à créer (Google Form, Shop
 
 Suis `shopify-theme/README.md` : installer Dawn (gratuit) puis y déposer les fichiers de `shopify-theme/sections/`, `shopify-theme/snippets/` et `shopify-theme/templates/`. Résultat : une page d'accueil et une page produit orientées bien-être animal (hero, engagements, univers chien/chat, meilleures ventes, abonnement, avis, réassurance, newsletter, FAQ), toutes personnalisables sans code depuis l'éditeur de thème.
 
+Une fois le thème posé, remplis les textes avec `marketing/proposition-de-valeur.md` (page À propos, titre du hero, bénéfices produit) — c'est ce qui différencie la boutique d'un dropshipping anonyme.
+
 Pense à remplacer "PattesZen" par le nom de ta marque partout où il apparaît (titre du site, réglages du thème, catalogue).
 
 ## Étape 3 — Catalogue produits

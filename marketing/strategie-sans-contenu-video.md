@@ -39,6 +39,16 @@ Les acheteurs y cherchent déjà avec intention d'achat. Lister quelques produit
 
 Rejoins des groupes type "chien allergique", "chat insuffisance rénale" (pas les groupes génériques "chiens [ville]" du plan initial) et réponds utilement quand quelqu'un demande une recommandation — c'est le moment exact où ton produit résout un problème réel, sans avoir rien publié toi-même.
 
+## 6. TikTok organique + payant — en externalisant la vidéo plutôt qu'en la filmant toi-même
+
+Beaucoup de formations dropshipping (dont celle que tu suis) misent sur le tandem TikTok organique + TikTok Ads, construit autour de créatives vidéo. Ce n'est pas incompatible avec "pas de vidéo de ta part" : la production peut être externalisée (freelances UGC type Fiverr, agences spécialisées) plutôt que filmée par toi.
+
+Si tu veux rouvrir ce canal sans apparaître à l'écran, une fois 2-3 produits validés via les canaux sans vidéo ci-dessus :
+
+1. Commande un échantillon et envoie-le à 1-2 créateurs UGC (recherche "UGC pet creator" ou "UGC créateur animaux" sur Fiverr, ou dans des groupes de créateurs francophones) pour qu'ils filment une vidéo "test/unboxing" avec leur propre animal — compte quelques dizaines d'euros par vidéo.
+2. Utilise cette vidéo en publicité TikTok Ads plutôt qu'en organique (même principe de compte pro que Meta, voir `../automation/README.md`) — un petit budget de test suffit pour commencer.
+3. Des outils comme Minea (recherche de produits/créatives gagnantes) ou Triplewhale (analytics pub) reviennent souvent dans ces formations — ce sont des abonnements payants, pas indispensables tant que le budget est serré : les statistiques natives Shopify et TikTok Ads suffisent pour démarrer.
+
 ## Ce qui reste en place, mais en second plan
 
 `automation/social_auto_poster.py` continue de tourner (c'est gratuit et automatique) — mais ne compte pas dessus comme moteur principal d'acquisition tant qu'il ne publie que du texte. Si un jour tu changes d'avis sur la vidéo (même une simple vidéo du produit ou de l'animal, sans toi à l'écran), ça redevient pertinent — mais ce n'est plus une condition pour vendre.

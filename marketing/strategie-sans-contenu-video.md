@@ -2,6 +2,16 @@
 
 `launch-plan-30-60-90.md` misait beaucoup sur les réseaux sociaux organiques (Instagram/TikTok) — aujourd'hui, la portée organique y dépend fortement de la vidéo (Reels/TikTok), que tu ne veux pas produire. Ce document reprend la priorité des canaux en partant de cette contrainte, et recentre le positionnement sur les moments où un client a un **besoin précis à résoudre**, plutôt qu'une envie à faire naître — le même principe qui fait qu'on va au supermarché sans pub, parce qu'on a faim.
 
+## Le principe de base : 3 leviers, il faut en actionner au moins un
+
+Zéro contenu + zéro budget + zéro effort de mise en relation ne fonctionne nulle part, avec ou sans vidéo — être inconnu au lancement est universel, y compris pour les boutiques qui font beaucoup de contenu (un créateur part aussi de zéro abonné). Il y a trois leviers pour en sortir, et la vidéo n'est qu'un choix possible parmi trois :
+
+1. **Le temps** — SEO, prospection vétos/toiletteurs, réponses utiles dans des groupes spécialisés. Gratuit, lent (semaines/mois).
+2. **L'argent** — Google Shopping/Search Ads. Rapide (jours), mais ça coûte, même un petit budget.
+3. **Le contenu** — réseaux sociaux, vidéo ou texte. Gratuit, mais demande de la régularité et un délai avant résultats.
+
+Ce document mise sur les leviers 1 et 2, puisque le levier 3 (vidéo) est exclu par contrainte personnelle.
+
 ## Deux familles de besoins, deux canaux différents
 
 - **Besoin aigu** ("mon chien a des allergies", "j'ai faim") → la personne cherche déjà activement. Elle se trouve via une recherche, une recommandation, une plateforme d'achat. Pas besoin de créer l'envie, juste d'être présent au bon moment.

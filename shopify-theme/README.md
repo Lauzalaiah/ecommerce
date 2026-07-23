@@ -26,6 +26,10 @@ Dans **Personnaliser le thème → Paramètres du thème → Couleurs**, une pal
 - Fond : blanc cassé `#FAF7F2`
 - Texte : gris anthracite `#2E2A26`
 
+## Attention avant de publier les textes (risque légal réel)
+
+En Personnalisant le thème, ne laisse aucun texte affirmer quelque chose que tu ne peux pas prouver — ex. "Recommandé par des vétérinaires", "certifié", "n°1 des ventes" — sans preuve réelle derrière (un vrai partenariat vétérinaire, une vraie certification). En France, une allégation commerciale trompeuse relève de l'**article L.132-2 du Code de la consommation** : jusqu'à 2 ans d'emprisonnement et une amende pouvant atteindre 10 % du chiffre d'affaires. Ce n'est pas théorique — voir `../marketing/obligations-legales-fiscales.md`. Le bloc "Recommandé par des vétérinaires" que la section Bénéfices produit contenait par défaut a été remplacé par un texte que tu peux honnêtement affirmer ("Vérifié avant mise en vente") ; ne le remets que si tu as un vrai partenariat vétérinaire à citer.
+
 ## Fonctionnalités qui nécessitent une app (pas du thème)
 
 - **Abonnement / livraison récurrente des croquettes** : la section `subscribe-save.liquid` ne fait que présenter l'offre ; la logique de facturation récurrente nécessite une app comme *Shopify Subscriptions* (gratuite) ou *Recharge*.

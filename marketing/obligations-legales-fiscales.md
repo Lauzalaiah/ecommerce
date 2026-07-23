@@ -2,6 +2,10 @@
 
 Ce point n'avait pas été couvert jusqu'ici. Ce qui suit est une checklist générale, pas un avis juridique — les seuils et règles évoluent et dépendent de ta situation exacte : fais valider ton statut avant ton premier euro de chiffre d'affaires par un expert-comptable (une première consultation est souvent gratuite ou à faible coût, y compris via des plateformes en ligne pour auto-entrepreneurs).
 
+## 0. Le risque le plus immédiat : les allégations trompeuses
+
+D'après la leçon "Les obligations légales d'une boutique en E-Commerce" de ta formation (dispensée par un avocat spécialisé e-commerce) : un contrôle DGCCRF sanctionne la **tromperie** (allégations commerciales fausses ou non prouvées) au titre de l'**article L.132-2 du Code de la consommation**, avec des peines pouvant aller jusqu'à **2 ans d'emprisonnement et une amende de 10 % du chiffre d'affaires** (ou 50 % des dépenses engagées pour la pratique en cause, selon la diapo présentée). Concrètement pour cette boutique : n'affiche jamais une allégation que tu ne peux pas prouver ("recommandé par des vétérinaires", "certifié", des avis clients inventés) — j'ai corrigé un texte de ce type dans le thème par défaut (voir `../shopify-theme/README.md`). Le reste de la leçon aborde aussi les "activités autorisées et interdites en e-commerce" — à regarder en entier, je n'ai vu que le sommaire/minutage, pas le détail.
+
 ## 1. Statut juridique — avant de vendre quoi que ce soit
 
 - Pour démarrer seul avec un volume incertain : le statut **auto-entrepreneur / micro-entreprise** est le plus simple (déclaration en ligne via le guichet unique de l'INPI, obtention d'un numéro SIRET).

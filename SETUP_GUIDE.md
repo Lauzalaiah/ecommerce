@@ -49,6 +49,7 @@ Le reste de `marketing/` :
 - `marketing/ad-copy-templates.md` — accroches publicitaires prêtes, à activer seulement une fois les premières ventes organiques obtenues.
 - `marketing/email-flows.md` — séquences email (bienvenue, panier abandonné, post-achat, réactivation).
 - `marketing/seo-guide.md` — trafic gratuit sur la durée.
+- `marketing/accelerer-acquisition-clients.md` — une fois du trafic obtenu : avatar client, tracking/retargeting, protocole de test pub, ventes additionnelles.
 
 ## Sur les "agents IA" qui trouvent des clients
 

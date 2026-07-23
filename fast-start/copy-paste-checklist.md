@@ -2,6 +2,27 @@
 
 Tout ce qui suit a déjà été décidé pour toi (noms, catégories, réglages) : il ne te reste qu'à coller ces valeurs dans les formulaires de chaque plateforme et à valider la vérification (email/SMS/carte) que toi seul peux faire. Objectif : que chaque étape prenne 2-3 minutes de clics, zéro minute de réflexion.
 
+## 0. Statut auto-entrepreneur — ~20-30 min + délai d'obtention du SIRET (à faire en premier, avant toute vente)
+
+Contrairement aux comptes ci-dessous, celui-ci n'est pas optionnel ni juste pratique : vendre sans immatriculation n'est pas légal en France, même via le lien Stripe rapide (voir `../marketing/obligations-legales-fiscales.md`). C'est donc la vraie étape 0.
+
+- Site officiel et gratuit : **formalites.entreprises.gouv.fr** (guichet unique) — ou **autoentrepreneur.urssaf.fr**, qui redirige vers le même guichet.
+- Parcours : "Créer une entreprise" → personne physique → micro-entreprise / auto-entrepreneur.
+- Activité à déclarer : `Vente à distance de produits de bien-être animal (alimentation, accessoires) via internet` — code NAF généralement attribué automatiquement pour ce type d'activité : `47.91B` (Vente à distance sur catalogue spécialisé) — c'est l'administration qui l'attribue, pas à choisir toi-même.
+- Adresse de l'entreprise : ton domicile (autorisé pour une activité en ligne, pas besoin de local commercial).
+- Date de début d'activité : le jour où tu veux pouvoir commencer à vendre légalement.
+- Régime social : micro-social simplifié (coché par défaut).
+- Case "versement libératoire de l'impôt sur le revenu" : à cocher seulement si ton revenu fiscal de référence est sous le seuil en vigueur (vérifie ton dernier avis d'imposition) — sinon laisse décochée.
+- Vérifie la case **ACRE** (réduction des cotisations sociales la 1ère année, sous conditions — demandeur d'emploi, moins de 26 ans, etc.) — proposée pendant l'inscription, gratuite à demander si éligible.
+- À préparer avant de commencer : pièce d'identité (CNI ou passeport), justificatif de domicile de moins de 3 mois.
+
+**Après l'inscription :**
+- Le numéro **SIRET** arrive sous quelques jours à quelques semaines (email/courrier) — tu ne peux légalement facturer qu'une fois obtenu.
+- Crée ensuite ton compte sur `autoentrepreneur.urssaf.fr` pour déclarer ton chiffre d'affaires (mensuel ou trimestriel, à choisir) — **déclaration obligatoire même à 0 €**, sinon pénalité.
+- Ouvre un compte bancaire séparé pour l'activité dès que possible (obligatoire légalement seulement au-delà de 10 000 € de CA sur 2 années consécutives, mais plus simple à gérer dès le départ).
+
+Coût : l'inscription est gratuite. Les cotisations sociales (environ 12,3 % du CA pour la vente de marchandises, taux à vérifier au moment de l'inscription car réévalué périodiquement) ne se paient que sur ce que tu déclares avoir réellement vendu — zéro vente = zéro cotisation. À partir de la 2ᵉ année, une taxe locale (CFE) s'ajoute généralement — pas d'action à prendre maintenant, juste à anticiper.
+
 ## 1. Google Form (liste d'attente) — 2 min
 
 - Titre : `Liste d'attente PattesZen`
@@ -43,4 +64,4 @@ Tout ce qui suit a déjà été décidé pour toi (noms, catégories, réglages)
 
 ## Après ça
 
-Il n'y a rien d'autre à créer comme compte. Une fois ces 5 étapes faites, tout le reste (thème, catalogue, publication automatique, recherche de prospects, emails) tourne avec ce qui est déjà dans ce dépôt.
+Il n'y a rien d'autre à créer comme compte. Une fois ces 6 étapes faites (le statut auto-entrepreneur en premier), tout le reste (thème, catalogue, publication automatique, recherche de prospects, emails) tourne avec ce qui est déjà dans ce dépôt.

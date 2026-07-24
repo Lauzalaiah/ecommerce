@@ -13,12 +13,13 @@ Ce dossier contient deux automatisations distinctes, chacune couvrant une partie
 
 1. **Convertir ton compte Instagram en compte professionnel** (Paramètres → Compte → Passer à un compte professionnel) et le lier à ta Page Facebook.
 2. Sur [developers.facebook.com](https://developers.facebook.com) → **Mes apps** → **Créer une app** → type "Entreprise".
-3. Dans l'app, ajoute le produit **Graph API Explorer** :
-   - Sélectionne ta Page dans le menu déroulant "User or Page".
-   - Génère un token avec les permissions `pages_manage_posts`, `pages_read_engagement`, `instagram_basic`, `instagram_content_publish`.
-   - Ce token expire par défaut en 1h — échange-le contre un **token longue durée** (~60 jours) via l'outil "Access Token Debugger" de Meta, puis renouvelle-le à l'approche de l'expiration.
-4. Récupère ton `FB_PAGE_ID` : **Paramètres de la Page → Informations sur la Page**, ou `GET /me/accounts` dans Graph API Explorer.
-5. Récupère ton `IG_BUSINESS_ACCOUNT_ID` : `GET /{FB_PAGE_ID}?fields=instagram_business_account`.
+3. Va sur [developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer) (Graph API Explorer) :
+   - En haut, sélectionne ton app dans le menu déroulant, puis ta Page dans "User or Page" (pas ton profil personnel).
+   - Bouton **Add Permissions** → coche `pages_manage_posts`, `pages_read_engagement`, `instagram_basic`, `instagram_content_publish`.
+   - **Generate Access Token** → autorise dans la fenêtre Facebook qui s'ouvre.
+4. Ce token dure 1h — échange-le contre un **token longue durée** (~60 jours) : copie-le, va sur [developers.facebook.com/tools/debug/accesstoken](https://developers.facebook.com/tools/debug/accesstoken/), colle-le, **Debug**, puis en bas de la page **Extend Access Token**. Ce nouveau token devient `FB_PAGE_ACCESS_TOKEN`. Renouvelle-le à l'approche de l'expiration.
+5. Récupère ton `FB_PAGE_ID` : dans Graph API Explorer, tape `me?fields=id,name` dans la barre de requête → **Submit** — le nombre affiché est ton `FB_PAGE_ID` (aussi visible dans **Paramètres de la Page → Informations sur la Page**).
+6. Récupère ton `IG_BUSINESS_ACCOUNT_ID` (optionnel, pour publier aussi sur Instagram) : dans Graph API Explorer, tape `{FB_PAGE_ID}?fields=instagram_business_account` (remplace `{FB_PAGE_ID}` par le vrai numéro de l'étape 5) → **Submit** — le nombre dans `instagram_business_account.id` est ton `IG_BUSINESS_ACCOUNT_ID`.
 
 ### Secrets GitHub à ajouter
 

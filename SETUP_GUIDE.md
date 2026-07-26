@@ -36,6 +36,8 @@ Suis `marketing/supplier-sourcing-alibaba-guide.md`. Résumé : le dropshipping 
 
 Tu pars avec un avantage : un contact fournisseur déjà éprouvé. `marketing/supplier-outreach-message.md` contient un message prêt à envoyer (FR/EN) pour transformer cette relation ponctuelle en partenariat régulier, avec les bonnes questions à poser (catalogue, tarifs par palier, dropshipping ou gros, certificats). Utilise `marketing/partner-outreach-tracker.csv` pour suivre cet échange et les autres partenariats locaux du plan d'acquisition.
 
+Pour les partenariats locaux (vétos/toiletteurs) : ne compte pas sur une simple promesse de recommandation, structure-la avec un code de réduction traçable et un flyer — voir `marketing/programme-parrainage-partenaires.md`.
+
 ## Étape 5 — Paiements et pages légales
 
 Dans l'admin Shopify → **Paramètres → Paiements** : active Shopify Payments (ou Stripe/PayPal en alternative) pour encaisser par carte. Aucune donnée bancaire n'est à me transmettre, c'est une étape que tu dois faire toi-même dans l'admin.

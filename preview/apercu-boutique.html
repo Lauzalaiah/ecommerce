@@ -1,0 +1,244 @@
+<title>Aperçu — PattesZen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --pine: #1b2a22;
+    --pine-soft: #33473c;
+    --sage: #5b7b63;
+    --sage-deep: #405a49;
+    --porcelain: #eef1ec;
+    --surface: #ffffff;
+    --clay: #a85c3f;
+    --clay-deep: #8a4a32;
+    --gold: #c79a44;
+    --line: rgba(27, 42, 34, 0.12);
+    --shadow: rgba(27, 42, 34, 0.14);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --pine: #eef1ea; --pine-soft: #c6d0c8; --sage: #86a892; --sage-deep: #6c9078;
+      --porcelain: #10190f; --surface: #17221b; --clay: #d3805d; --clay-deep: #e59a75;
+      --gold: #dcb666; --line: rgba(238,241,234,0.14); --shadow: rgba(0,0,0,0.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --pine: #eef1ea; --pine-soft: #c6d0c8; --sage: #86a892; --sage-deep: #6c9078;
+    --porcelain: #10190f; --surface: #17221b; --clay: #d3805d; --clay-deep: #e59a75;
+    --gold: #dcb666; --line: rgba(238,241,234,0.14); --shadow: rgba(0,0,0,0.5);
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --pine: #1b2a22; --pine-soft: #33473c; --sage: #5b7b63; --sage-deep: #405a49;
+    --porcelain: #eef1ec; --surface: #ffffff; --clay: #a85c3f; --clay-deep: #8a4a32;
+    --gold: #c79a44; --line: rgba(27,42,34,0.12); --shadow: rgba(27,42,34,0.14);
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--porcelain);
+    color: var(--pine);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  svg { width: 100%; height: 100%; }
+  .disclaimer {
+    background: var(--pine);
+    color: var(--porcelain);
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    letter-spacing: 0.01em;
+  }
+  .disclaimer strong { color: var(--gold); }
+
+  /* Announcement bar */
+  .announcement {
+    display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
+    padding: 0.55rem 1rem; font-size: 0.82rem; font-weight: 600;
+    background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  .announcement span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .announcement svg { width: 15px; height: 15px; color: var(--sage-deep); }
+
+  /* Hero */
+  .hero { position: relative; display: grid; place-items: center; min-height: 480px; background: var(--porcelain); overflow: hidden; text-align: left; }
+  .hero::before {
+    content: ""; position: absolute; top: -10vw; right: -8vw; width: 42vw; height: 42vw; max-width: 520px; max-height: 520px;
+    background: radial-gradient(circle at 40% 40%, var(--sage) 0%, transparent 72%); opacity: 0.25; pointer-events: none;
+  }
+  .hero-content { position: relative; max-width: 620px; padding: 4rem 2rem; animation: rise 0.7s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px);} to { opacity: 1; transform: translateY(0);} }
+  .hero h1 { font-family: "Iowan Old Style","Palatino Linotype","URW Palladio L",Georgia,serif; font-size: clamp(2.1rem, 4.2vw, 3.4rem); line-height: 1.08; margin: 0 0 1.1rem; text-wrap: balance; }
+  .hero h1 em { font-style: italic; color: var(--sage-deep); }
+  .hero p.dek { font-size: 1.15rem; line-height: 1.55; opacity: 0.85; margin: 0 0 2rem; max-width: 46ch; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; padding: 0.9rem 1.6rem; border-radius: 12px; text-decoration: none; font-size: 0.98rem; transition: transform .15s ease, background .15s ease; }
+  .btn--primary { background: var(--clay); color: #fdf8f4; box-shadow: 0 14px 28px -16px var(--shadow); }
+  .btn--primary:hover { background: var(--clay-deep); transform: translateY(-2px); }
+  .btn--secondary { background: transparent; color: var(--pine); border: 1.5px solid var(--line); }
+  .trust-strip { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.85rem; font-weight: 500; opacity: 0.85; }
+  .trust-strip span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .trust-strip svg { width: 16px; height: 16px; color: var(--sage-deep); }
+
+  section { padding: 3.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+  h2.section-heading { text-align: center; font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 0 0 2.25rem; }
+
+  /* value props */
+  .value-props { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; }
+  .value-prop { text-align: center; padding: 1.25rem 1rem; border-radius: 14px; transition: transform .2s ease, box-shadow .2s ease; }
+  .value-prop:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -20px var(--shadow); }
+  .value-prop .icon { width: 42px; height: 42px; margin: 0 auto .85rem; color: var(--sage-deep); }
+  .value-prop .title { font-weight: 600; font-size: 1.02rem; margin: 0 0 .3rem; }
+  .value-prop .text { font-size: .9rem; opacity: .72; margin: 0; line-height: 1.5; }
+
+  /* categories */
+  .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; }
+  .category-card { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 4/5; box-shadow: 0 18px 32px -22px var(--shadow); text-decoration: none; color: #fff; display: flex; align-items: flex-end; }
+  .category-card .tile { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .35s ease; }
+  .category-card:hover .tile { transform: scale(1.06); }
+  .category-card .tile svg { width: 30%; height: 30%; opacity: 0.9; color: #fff; }
+  .category-card__label { position: relative; z-index: 1; width: 100%; padding: 1.15rem 1.1rem; background: linear-gradient(transparent, rgba(0,0,0,0.6)); font-weight: 600; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; }
+  .category-card__label svg { width: 18px; height: 18px; opacity: .85; }
+
+  /* best sellers mockup */
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.5rem; }
+  .product-card { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--surface); }
+  .product-card .thumb { aspect-ratio: 1; display: grid; place-items: center; background: linear-gradient(135deg, rgba(91,123,99,0.15), rgba(199,154,68,0.15)); }
+  .product-card .thumb svg { width: 34%; height: 34%; color: var(--sage-deep); opacity: .8; }
+  .product-card .info { padding: 1rem 1.1rem 1.25rem; }
+  .product-card .name { font-size: .92rem; font-weight: 600; margin: 0 0 .3rem; line-height: 1.35; }
+  .product-card .price { font-size: .95rem; color: var(--clay-deep); font-weight: 700; margin: 0; }
+
+  /* subscribe-save */
+  .subscribe { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; max-width: 1000px; }
+  @media (min-width: 750px) { .subscribe { grid-template-columns: 1fr 1fr; } }
+  .subscribe .tile { aspect-ratio: 4/3; border-radius: 14px; background: linear-gradient(135deg, rgba(91,123,99,0.18), rgba(168,92,63,0.14)); display: grid; place-items: center; }
+  .subscribe .tile svg { width: 26%; height: 26%; color: var(--sage-deep); }
+  .subscribe .badge { display: inline-block; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: .25rem .75rem; border-radius: 999px; background: rgba(199,154,68,0.18); color: var(--clay-deep); margin-bottom: .6rem; }
+  .subscribe h3 { margin: 0 0 .6rem; font-size: 1.3rem; }
+  .subscribe p { opacity: .8; line-height: 1.55; }
+
+  /* testimonials */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; }
+  .testimonial-card { border: 1px solid var(--line); border-radius: 16px; padding: 1.75rem; background: rgba(0,0,0,0.015); transition: transform .2s ease, box-shadow .2s ease; }
+  .testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 20px 36px -24px var(--shadow); }
+  .stars { color: var(--gold); letter-spacing: 2px; margin: 0 0 .85rem; font-size: 1.05rem; }
+  .testimonial-card .quote { font-style: italic; line-height: 1.55; margin: 0 0 1.25rem; }
+  .testimonial-card .meta { display: flex; align-items: center; gap: .65rem; }
+  .avatar { width: 34px; height: 34px; border-radius: 50%; background: rgba(91,123,99,.18); color: var(--sage-deep); display: grid; place-items: center; font-weight: 700; font-size: .85rem; }
+  .testimonial-note { text-align: center; font-size: .8rem; opacity: .6; margin: -1.5rem 0 2rem; }
+
+  /* trust badges */
+  .badges-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  .badge-pill { display: flex; align-items: center; gap: .6rem; font-size: .88rem; font-weight: 500; padding: .6rem 1.1rem; border-radius: 999px; background: rgba(0,0,0,.035); border: 1px solid var(--line); }
+  .badge-pill svg { width: 19px; height: 19px; color: var(--sage-deep); }
+
+  /* newsletter */
+  .newsletter-card { max-width: 600px; margin: 0 auto; text-align: center; padding: 2.5rem 2rem; border-radius: 20px; background: rgba(0,0,0,0.025); border: 1px solid var(--line); }
+  .newsletter-card h2 { margin: 0 0 .5rem; font-size: clamp(1.4rem, 2.6vw, 1.8rem); }
+  .newsletter-card p { opacity: .8; margin: 0 0 1.5rem; }
+  .newsletter-form { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center; }
+  .newsletter-form input { flex: 1 1 240px; padding: .85rem 1.1rem; border-radius: 10px; border: 1px solid var(--line); font-size: 1rem; background: var(--surface); color: var(--pine); }
+
+  footer.site-footer { text-align: center; padding: 2rem 1rem 3rem; font-size: .78rem; opacity: .6; }
+</style>
+
+<div class="disclaimer">Aperçu visuel — <strong>maquette de démonstration</strong>, pas la boutique en ligne réelle. Les tuiles avec icône remplacent les vraies photos produit à venir.</div>
+
+<div class="announcement">
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="11"/><path d="M15 9h4l3 3v5h-7z"/><circle cx="6" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg> Livraison offerte dès 39€</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Satisfait ou remboursé 30 jours</span>
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Paiement 100% sécurisé</span>
+</div>
+
+<section class="hero" style="padding:0; max-width:none;">
+  <div class="hero-content">
+    <h1>Ce que vous alliez chercher en animalerie, <em>livré chez vous.</em></h1>
+    <p class="dek">Croquettes, friandises et soins sélectionnés pour la santé de votre chien ou de votre chat.</p>
+    <div class="hero-cta">
+      <a class="btn btn--primary" href="#">Découvrir la boutique <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--secondary" href="#">Notre engagement bien-être</a>
+    </div>
+    <div class="trust-strip">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="11"/><path d="M15 9h4l3 3v5h-7z"/><circle cx="6" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg> Livraison 24-48h</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Satisfait ou remboursé</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Paiement sécurisé</span>
+    </div>
+  </div>
+</section>
+
+<section class="value-props">
+  <div class="value-prop"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="11"/><path d="M15 9h4l3 3v5h-7z"/><circle cx="6" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg></div><p class="title">Livraison en 24-48h</p><p class="text">Partout en France métropolitaine</p></div>
+  <div class="value-prop"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-8 6-14 16-14 0 10-6 16-14 16H4v-2z"/><path d="M6 18C10 14 13 11 18 7"/></svg></div><p class="title">Sélectionné avec soin</p><p class="text">Ingrédients naturels, sans additifs superflus</p></div>
+  <div class="value-prop"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><p class="title">Satisfait ou remboursé</p><p class="text">30 jours pour changer d'avis</p></div>
+  <div class="value-prop"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><p class="title">Paiement sécurisé</p><p class="text">Carte, PayPal, 3x sans frais</p></div>
+</section>
+
+<section>
+  <h2 class="section-heading">Trouvez ce qu'il faut pour votre compagnon</h2>
+  <div class="categories-grid">
+    <a class="category-card" href="#"><div class="tile" style="background:linear-gradient(135deg,#5b7b63,#33473c)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.5" cy="8" r="2.2"/><circle cx="12" cy="5.5" r="2.2"/><circle cx="17.5" cy="8" r="2.2"/><path d="M12 10.5c-3.3 0-6 2.4-6 5.3 0 1.9 1.6 3.2 3.6 3.2.9 0 1.6-.3 2.4-.3s1.5.3 2.4.3c2 0 3.6-1.3 3.6-3.2 0-2.9-2.7-5.3-6-5.3z"/></svg></div><span class="category-card__label">Chiens <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="category-card" href="#"><div class="tile" style="background:linear-gradient(135deg,#a85c3f,#8a4a32)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.5" cy="8" r="2.2"/><circle cx="12" cy="5.5" r="2.2"/><circle cx="17.5" cy="8" r="2.2"/><path d="M12 10.5c-3.3 0-6 2.4-6 5.3 0 1.9 1.6 3.2 3.6 3.2.9 0 1.6-.3 2.4-.3s1.5.3 2.4.3c2 0 3.6-1.3 3.6-3.2 0-2.9-2.7-5.3-6-5.3z"/></svg></div><span class="category-card__label">Chats <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="category-card" href="#"><div class="tile" style="background:linear-gradient(135deg,#c79a44,#a8802f)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9.5-8.8C.8 8 2 4.5 5.4 3.6 8 2.9 10.3 4 12 6.5 13.7 4 16 2.9 18.6 3.6 22 4.5 23.2 8 21.5 11.2 19 15.6 12 20 12 20z"/></svg></div><span class="category-card__label">Compléments &amp; santé <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="category-card" href="#"><div class="tile" style="background:linear-gradient(135deg,#405a49,#1b2a22)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-8 6-14 16-14 0 10-6 16-14 16H4v-2z"/><path d="M6 18C10 14 13 11 18 7"/></svg></div><span class="category-card__label">Hygiène &amp; soin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-heading">Nos meilleures ventes</h2>
+  <div class="product-grid">
+    <div class="product-card"><div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17.5" cy="8" r="2"/><path d="M12 10.5c-3 0-5.5 2.2-5.5 4.8 0 1.7 1.4 2.9 3.3 2.9.8 0 1.4-.3 2.2-.3s1.4.3 2.2.3c1.9 0 3.3-1.2 3.3-2.9 0-2.6-2.5-4.8-5.5-4.8z"/></svg></div><div class="info"><p class="name">Croquettes Chien Adulte Poulet &amp; Riz — 2 kg</p><p class="price">24,90 €</p></div></div>
+    <div class="product-card"><div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17.5" cy="8" r="2"/><path d="M12 10.5c-3 0-5.5 2.2-5.5 4.8 0 1.7 1.4 2.9 3.3 2.9.8 0 1.4-.3 2.2-.3s1.4.3 2.2.3c1.9 0 3.3-1.2 3.3-2.9 0-2.6-2.5-4.8-5.5-4.8z"/></svg></div><div class="info"><p class="name">Croquettes Chien Sans Céréales Saumon — 3 kg</p><p class="price">32,90 €</p></div></div>
+    <div class="product-card"><div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17.5" cy="8" r="2"/><path d="M12 10.5c-3 0-5.5 2.2-5.5 4.8 0 1.7 1.4 2.9 3.3 2.9.8 0 1.4-.3 2.2-.3s1.4.3 2.2.3c1.9 0 3.3-1.2 3.3-2.9 0-2.6-2.5-4.8-5.5-4.8z"/></svg></div><div class="info"><p class="name">Croquettes Chat Adulte à la Volaille — 1.5 kg</p><p class="price">19,90 €</p></div></div>
+    <div class="product-card"><div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c4 3 7 6 7 10a7 7 0 0 1-14 0c0-4 3-7 7-10z"/></svg></div><div class="info"><p class="name">Complément Huile de Saumon — 250 ml</p><p class="price">15,90 €</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="subscribe">
+    <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17.5" cy="8" r="2"/><path d="M12 10.5c-3 0-5.5 2.2-5.5 4.8 0 1.7 1.4 2.9 3.3 2.9.8 0 1.4-.3 2.2-.3s1.4.3 2.2.3c1.9 0 3.3-1.2 3.3-2.9 0-2.6-2.5-4.8-5.5-4.8z"/></svg></div>
+    <div>
+      <span class="badge">Nouveau</span>
+      <h3>Ne soyez plus jamais à court de croquettes</h3>
+      <p>Abonnez-vous à une livraison récurrente et économisez 10 % sur chaque commande. Modifiable ou annulable à tout moment.</p>
+      <a class="btn btn--primary" href="#">Voir les produits éligibles</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-heading">Ils nous font confiance</h2>
+  <p class="testimonial-note">Exemple de mise en page — à remplacer par de vrais avis reçus, jamais inventés.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"Remplace ce texte par un vrai avis reçu d'un vrai client."</p>
+      <div class="meta"><span class="avatar">T</span><p style="font-weight:600;font-size:.9rem;margin:0">Ton premier client</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="badges-row">
+    <div class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Paiement 100 % sécurisé</div>
+    <div class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="11"/><path d="M15 9h4l3 3v5h-7z"/><circle cx="6" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg> Expédié depuis la France</div>
+    <div class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9.5-8.8C.8 8 2 4.5 5.4 3.6 8 2.9 10.3 4 12 6.5 13.7 4 16 2.9 18.6 3.6 22 4.5 23.2 8 21.5 11.2 19 15.6 12 20 12 20z"/></svg> Service client réactif</div>
+    <div class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Satisfait ou remboursé 30 jours</div>
+  </div>
+</section>
+
+<section>
+  <div class="newsletter-card">
+    <h2>10 % de réduction sur votre première commande</h2>
+    <p>Inscrivez-vous pour recevoir le code et nos conseils bien-être animal.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Votre adresse email" disabled>
+      <button class="btn btn--primary" type="button" disabled>Je m'inscris</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">PattesZen — maquette de démonstration, aucune donnée n'est envoyée depuis cette page.</footer>

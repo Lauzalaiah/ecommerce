@@ -6,7 +6,7 @@ Constat de départ, qui est juste et normal (pas une question de gens malhonnêt
 
 Au lieu de demander "peux-tu recommander ma boutique", propose un code de réduction **nominatif et traçable** :
 
-- Dans l'admin Shopify → **Réductions → Créer une réduction** → un code unique par partenaire, ex. `VETODUPONT10` (10% pour le client) et note en interne la commission que ça te déclenche à toi (ex. 5€ ou 10% reversés au vétérinaire par commande passée avec son code).
+- Dans l'admin Shopify → **Réductions → Créer une réduction** → un code unique par partenaire, ex. `VETOLEO94` (10% pour le client) et note en interne la commission que ça te déclenche à toi (ex. 5€ ou 10% reversés au vétérinaire par commande passée avec son code).
 - Le partenaire n'a plus besoin de "se souvenir de dire du bien" — chaque fois qu'un client utilise son code, c'est vérifiable et il touche quelque chose. Son intérêt personnel devient aligné avec le tien, plutôt que de reposer sur sa mémoire ou sa gentillesse.
 - Pour tes proches (pas de commission financière logique) : remplace par un système de parrainage classique ("10% pour toi, 10% pour ton ami" déjà mentionné dans `launch-plan-30-60-90.md`) — même logique, gain concret des deux côtés.
 

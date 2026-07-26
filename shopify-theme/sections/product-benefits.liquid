@@ -1,16 +1,35 @@
 {% style %}
   .product-benefits-{{ section.id }} {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  .product-benefits-{{ section.id }} .stock-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--stock-notice-color, #a85c3f);
+    background: rgba(168, 92, 63, 0.1);
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    margin: 0 auto 1.5rem;
+    width: fit-content;
+  }
+  .product-benefits-{{ section.id }} .stock-notice svg {
+    width: 16px;
+    height: 16px;
+  }
+  .product-benefits-{{ section.id }} .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1.5rem;
-    padding: 2rem 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
     text-align: center;
   }
   .product-benefits-{{ section.id }} .benefit svg {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     margin: 0 auto 0.5rem;
   }
   .product-benefits-{{ section.id }} .benefit p {
@@ -21,12 +40,24 @@
 {% endstyle %}
 
 <div class="product-benefits-{{ section.id }} color-{{ section.settings.color_scheme }}">
-  {%- for block in section.blocks -%}
-    <div class="benefit" {{ block.shopify_attributes }}>
-      {% render 'icon-paw' %}
-      <p>{{ block.settings.label }}</p>
-    </div>
-  {%- endfor -%}
+  {%- if section.settings.show_stock_notice and product and product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
+    {%- assign qty = product.selected_or_first_available_variant.inventory_quantity -%}
+    {%- if qty > 0 and qty <= section.settings.stock_threshold -%}
+      <div class="stock-notice">
+        {% render 'icon-benefit', icon: 'badge' %}
+        Plus que {{ qty }} en stock
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="benefits-grid">
+    {%- for block in section.blocks -%}
+      <div class="benefit" {{ block.shopify_attributes }}>
+        {% render 'icon-benefit', icon: block.settings.icon %}
+        <p>{{ block.settings.label }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
 </div>
 
 {% schema %}
@@ -35,6 +66,8 @@
   "tag": "section",
   "class": "section-product-benefits",
   "settings": [
+    { "type": "checkbox", "id": "show_stock_notice", "label": "Afficher un message de stock faible (basé sur le vrai stock Shopify)", "default": false },
+    { "type": "range", "id": "stock_threshold", "label": "Seuil considéré comme faible", "min": 1, "max": 20, "step": 1, "default": 5 },
     { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-1" }
   ],
   "blocks": [
@@ -42,16 +75,25 @@
       "type": "benefit",
       "name": "Bénéfice",
       "settings": [
+        { "type": "select", "id": "icon", "label": "Icône", "default": "leaf", "options": [
+          { "value": "paw", "label": "Patte" },
+          { "value": "truck", "label": "Livraison" },
+          { "value": "shield", "label": "Garantie" },
+          { "value": "leaf", "label": "Naturel" },
+          { "value": "heart", "label": "Bien-être" },
+          { "value": "badge", "label": "Qualité" },
+          { "value": "lock", "label": "Sécurité" }
+        ]},
         { "type": "text", "id": "label", "label": "Texte", "default": "Sans céréales" }
       ]
     }
   ],
   "default": {
     "blocks": [
-      { "type": "benefit", "settings": { "label": "Sans céréales" } },
-      { "type": "benefit", "settings": { "label": "Fabriqué en Europe" } },
-      { "type": "benefit", "settings": { "label": "Riche en protéines animales" } },
-      { "type": "benefit", "settings": { "label": "Vérifié avant mise en vente" } }
+      { "type": "benefit", "settings": { "icon": "leaf", "label": "Sans céréales" } },
+      { "type": "benefit", "settings": { "icon": "badge", "label": "Vérifié avant mise en vente" } },
+      { "type": "benefit", "settings": { "icon": "heart", "label": "Riche en protéines animales" } },
+      { "type": "benefit", "settings": { "icon": "truck", "label": "Livraison 24-48h" } }
     ]
   },
   "presets": [

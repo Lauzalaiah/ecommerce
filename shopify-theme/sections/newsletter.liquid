@@ -1,26 +1,42 @@
 {% style %}
   .newsletter-{{ section.id }} {
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 1.5rem;
     text-align: center;
-    max-width: 600px;
+  }
+  .newsletter-{{ section.id }} .newsletter-card {
+    max-width: 640px;
     margin: 0 auto;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.025);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .newsletter-{{ section.id }} h2 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.4rem, 2.6vw, 1.8rem);
   }
   .newsletter-{{ section.id }} form {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 1.5rem;
   }
   .newsletter-{{ section.id }} input[type="email"] {
     flex: 1 1 240px;
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    border-radius: 10px;
     border: 1px solid rgba(0,0,0,0.15);
+    font-size: 1rem;
+  }
+  .newsletter-{{ section.id }} input[type="email"]:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
   }
 {% endstyle %}
 
 <div class="newsletter-{{ section.id }} color-{{ section.settings.color_scheme }}">
+ <div class="newsletter-card">
   <h2>{{ section.settings.heading }}</h2>
   <div>{{ section.settings.text }}</div>
 
@@ -40,6 +56,7 @@
       <p>{{ section.settings.success_message }}</p>
     {%- endif -%}
   {%- endform -%}
+ </div>
 </div>
 
 {% schema %}

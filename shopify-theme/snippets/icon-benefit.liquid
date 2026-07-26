@@ -1,0 +1,36 @@
+{%- comment -%} Usage: {% render 'icon-benefit', icon: block.settings.icon %} {%- endcomment -%}
+{%- case icon -%}
+  {%- when 'truck' -%}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="1" y="6" width="14" height="11"/>
+      <path d="M15 9h4l3 3v5h-7z"/>
+      <circle cx="6" cy="19" r="1.8"/>
+      <circle cx="17.5" cy="19" r="1.8"/>
+    </svg>
+  {%- when 'shield' -%}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </svg>
+  {%- when 'leaf' -%}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 20c0-8 6-14 16-14 0 10-6 16-14 16H4v-2z"/>
+      <path d="M6 18C10 14 13 11 18 7"/>
+    </svg>
+  {%- when 'heart' -%}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 20s-7-4.4-9.5-8.8C.8 8 2 4.5 5.4 3.6 8 2.9 10.3 4 12 6.5 13.7 4 16 2.9 18.6 3.6 22 4.5 23.2 8 21.5 11.2 19 15.6 12 20 12 20z"/>
+    </svg>
+  {%- when 'badge' -%}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="10" r="7"/>
+      <path d="M8 21l4-4 4 4M9 10l2 2 4-4"/>
+    </svg>
+  {%- when 'lock' -%}
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="4" y="11" width="16" height="9" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </svg>
+  {%- else -%}
+    {% render 'icon-paw' %}
+{%- endcase -%}

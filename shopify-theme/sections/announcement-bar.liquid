@@ -1,0 +1,79 @@
+{% style %}
+  .announcement-{{ section.id }} {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    padding: 0.55rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .announcement-{{ section.id }} .announcement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+  }
+  .announcement-{{ section.id }} .announcement-item svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+  @media screen and (max-width: 749px) {
+    .announcement-{{ section.id }} {
+      gap: 1.25rem;
+      overflow-x: auto;
+      justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+{% endstyle %}
+
+<div class="announcement-{{ section.id }} color-{{ section.settings.color_scheme }}">
+  {%- for block in section.blocks -%}
+    <div class="announcement-item" {{ block.shopify_attributes }}>
+      {% render 'icon-benefit', icon: block.settings.icon %}
+      <span>{{ block.settings.text }}</span>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Barre d'annonce",
+  "tag": "section",
+  "class": "section-announcement-bar",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-2" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Message",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icône", "default": "truck", "options": [
+          { "value": "paw", "label": "Patte" },
+          { "value": "truck", "label": "Livraison" },
+          { "value": "shield", "label": "Garantie" },
+          { "value": "leaf", "label": "Naturel" },
+          { "value": "heart", "label": "Bien-être" },
+          { "value": "badge", "label": "Qualité" },
+          { "value": "lock", "label": "Sécurité" }
+        ]},
+        { "type": "text", "id": "text", "label": "Texte", "default": "Livraison offerte dès 39€" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "item", "settings": { "icon": "truck", "text": "Livraison offerte dès 39€" } },
+      { "type": "item", "settings": { "icon": "shield", "text": "Satisfait ou remboursé 30 jours" } },
+      { "type": "item", "settings": { "icon": "lock", "text": "Paiement 100% sécurisé" } }
+    ]
+  },
+  "presets": [
+    { "name": "Barre d'annonce" }
+  ]
+}
+{% endschema %}

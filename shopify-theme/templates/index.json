@@ -1,5 +1,8 @@
 {
   "sections": {
+    "announcement": {
+      "type": "announcement-bar"
+    },
     "hero": {
       "type": "hero-banner",
       "settings": {
@@ -41,6 +44,7 @@
     }
   },
   "order": [
+    "announcement",
     "hero",
     "value_props",
     "categories",

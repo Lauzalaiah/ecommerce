@@ -3,21 +3,25 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
-    padding: 2rem 1.5rem;
-    max-width: 1000px;
+    gap: 1rem;
+    padding: 2.5rem 1.5rem;
+    max-width: 1100px;
     margin: 0 auto;
-    font-size: 0.9rem;
-    opacity: 0.85;
   }
   .trust-badges-{{ section.id }} .trust-badge {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.035);
+    border: 1px solid rgba(0, 0, 0, 0.06);
   }
   .trust-badges-{{ section.id }} .trust-badge svg {
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
     flex-shrink: 0;
   }
 {% endstyle %}
@@ -25,7 +29,7 @@
 <div class="trust-badges-{{ section.id }} color-{{ section.settings.color_scheme }}">
   {%- for block in section.blocks -%}
     <div class="trust-badge" {{ block.shopify_attributes }}>
-      {% render 'icon-paw' %}
+      {% render 'icon-benefit', icon: block.settings.icon %}
       <span>{{ block.settings.text }}</span>
     </div>
   {%- endfor -%}
@@ -44,16 +48,25 @@
       "type": "badge",
       "name": "Élément de réassurance",
       "settings": [
+        { "type": "select", "id": "icon", "label": "Icône", "default": "lock", "options": [
+          { "value": "paw", "label": "Patte" },
+          { "value": "truck", "label": "Livraison" },
+          { "value": "shield", "label": "Garantie" },
+          { "value": "leaf", "label": "Naturel" },
+          { "value": "heart", "label": "Bien-être" },
+          { "value": "badge", "label": "Qualité" },
+          { "value": "lock", "label": "Sécurité" }
+        ]},
         { "type": "text", "id": "text", "label": "Texte", "default": "Paiement 100 % sécurisé" }
       ]
     }
   ],
   "default": {
     "blocks": [
-      { "type": "badge", "settings": { "text": "Paiement 100 % sécurisé" } },
-      { "type": "badge", "settings": { "text": "Expédié depuis la France" } },
-      { "type": "badge", "settings": { "text": "Service client réactif" } },
-      { "type": "badge", "settings": { "text": "Satisfait ou remboursé 30 jours" } }
+      { "type": "badge", "settings": { "icon": "lock", "text": "Paiement 100 % sécurisé" } },
+      { "type": "badge", "settings": { "icon": "truck", "text": "Expédié depuis la France" } },
+      { "type": "badge", "settings": { "icon": "heart", "text": "Service client réactif" } },
+      { "type": "badge", "settings": { "icon": "shield", "text": "Satisfait ou remboursé 30 jours" } }
     ]
   },
   "presets": [

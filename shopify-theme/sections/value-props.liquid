@@ -3,33 +3,44 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
   }
   .value-props-{{ section.id }} .value-prop {
     text-align: center;
+    padding: 1.25rem 1rem;
+    border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .value-props-{{ section.id }} .value-prop:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -20px rgba(0, 0, 0, 0.25);
   }
   .value-props-{{ section.id }} .value-prop__icon {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 0.75rem;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 0.85rem;
+    color: var(--value-prop-icon-color, currentColor);
   }
   .value-props-{{ section.id }} .value-prop__title {
     font-weight: 600;
-    margin: 0 0 0.25rem;
+    font-size: 1.02rem;
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
   }
   .value-props-{{ section.id }} .value-prop__text {
     font-size: 0.9rem;
-    opacity: 0.8;
+    opacity: 0.75;
     margin: 0;
+    line-height: 1.5;
   }
 {% endstyle %}
 
 <div class="value-props-{{ section.id }} color-{{ section.settings.color_scheme }}">
   {%- for block in section.blocks -%}
     <div class="value-prop" {{ block.shopify_attributes }}>
-      <div class="value-prop__icon">{% render 'icon-paw' %}</div>
+      <div class="value-prop__icon">{% render 'icon-benefit', icon: block.settings.icon %}</div>
       <p class="value-prop__title">{{ block.settings.title }}</p>
       <p class="value-prop__text">{{ block.settings.text }}</p>
     </div>
@@ -49,6 +60,15 @@
       "type": "value_prop",
       "name": "Engagement",
       "settings": [
+        { "type": "select", "id": "icon", "label": "Icône", "default": "paw", "options": [
+          { "value": "paw", "label": "Patte" },
+          { "value": "truck", "label": "Livraison" },
+          { "value": "shield", "label": "Garantie" },
+          { "value": "leaf", "label": "Naturel" },
+          { "value": "heart", "label": "Bien-être" },
+          { "value": "badge", "label": "Qualité" },
+          { "value": "lock", "label": "Sécurité" }
+        ]},
         { "type": "text", "id": "title", "label": "Titre", "default": "Livraison en 24-48h" },
         { "type": "text", "id": "text", "label": "Description", "default": "Partout en France métropolitaine" }
       ]
@@ -56,10 +76,10 @@
   ],
   "default": {
     "blocks": [
-      { "type": "value_prop", "settings": { "title": "Livraison en 24-48h", "text": "Partout en France métropolitaine" } },
-      { "type": "value_prop", "settings": { "title": "Sélectionné avec soin", "text": "Ingrédients naturels, sans additifs superflus" } },
-      { "type": "value_prop", "settings": { "title": "Satisfait ou remboursé", "text": "30 jours pour changer d'avis" } },
-      { "type": "value_prop", "settings": { "title": "Paiement sécurisé", "text": "Carte, PayPal, 3x sans frais" } }
+      { "type": "value_prop", "settings": { "icon": "truck", "title": "Livraison en 24-48h", "text": "Partout en France métropolitaine" } },
+      { "type": "value_prop", "settings": { "icon": "leaf", "title": "Sélectionné avec soin", "text": "Ingrédients naturels, sans additifs superflus" } },
+      { "type": "value_prop", "settings": { "icon": "shield", "title": "Satisfait ou remboursé", "text": "30 jours pour changer d'avis" } },
+      { "type": "value_prop", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "Carte, PayPal, 3x sans frais" } }
     ]
   },
   "presets": [

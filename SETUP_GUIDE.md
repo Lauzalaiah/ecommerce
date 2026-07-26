@@ -44,6 +44,8 @@ Dans le même admin → **Paramètres → Règles** : génère/adapte les mentio
 
 ## Étape 6 — Trouver tes premiers clients
 
+**Le jour où tout est prêt mais qu'il n'y a encore aucun client** : suis `marketing/jour-j-zero-client.md` — ça assemble tout ce qui suit en une seule séquence heure par heure, à exécuter mécaniquement plutôt qu'à improviser.
+
 **Si tu ne veux pas faire de contenu vidéo**, commence par `marketing/strategie-sans-contenu-video.md` — ça réoriente vers les canaux qui captent un besoin déjà exprimé (recherche Google, vétérinaires, marketplaces) plutôt que les réseaux sociaux organiques, dont la portée sans vidéo est aujourd'hui limitée.
 
 Le reste de `marketing/` :

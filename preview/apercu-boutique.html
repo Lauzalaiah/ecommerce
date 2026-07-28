@@ -36,6 +36,8 @@
     color-scheme: light;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body {
     margin: 0;
     background: var(--porcelain);
@@ -159,8 +161,8 @@
     <h1>Une réponse précise au besoin de votre chien ou chat, <em>livré chez vous.</em></h1>
     <p class="dek">Allergies, digestion sensible, articulations, anxiété : des produits choisis pour résoudre un problème précis, pas juste un joli produit de plus.</p>
     <div class="hero-cta">
-      <a class="btn btn--primary" href="#">Découvrir la boutique <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn--secondary" href="#">Notre engagement bien-être</a>
+      <a class="btn btn--primary" href="#produits">Découvrir la boutique <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--secondary" href="#engagement">Notre engagement bien-être</a>
     </div>
     <div class="trust-strip">
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="11"/><path d="M15 9h4l3 3v5h-7z"/><circle cx="6" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg> Livraison 24-48h</span>
@@ -170,7 +172,7 @@
   </div>
 </section>
 
-<section class="value-props">
+<section class="value-props" id="engagement">
   <div class="value-prop"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="11"/><path d="M15 9h4l3 3v5h-7z"/><circle cx="6" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg></div><p class="title">Livraison en 24-48h</p><p class="text">Partout en France métropolitaine</p></div>
   <div class="value-prop"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-8 6-14 16-14 0 10-6 16-14 16H4v-2z"/><path d="M6 18C10 14 13 11 18 7"/></svg></div><p class="title">Sélectionné avec soin</p><p class="text">Ingrédients naturels, sans additifs superflus</p></div>
   <div class="value-prop"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><p class="title">Satisfait ou remboursé</p><p class="text">30 jours pour changer d'avis</p></div>
@@ -180,15 +182,15 @@
 <section>
   <h2 class="section-heading">Trouvez ce qu'il faut pour votre compagnon</h2>
   <div class="categories-grid">
-    <a class="category-card" href="#"><div class="tile" style="background:linear-gradient(135deg,#5b7b63,#33473c)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.5" cy="8" r="2.2"/><circle cx="12" cy="5.5" r="2.2"/><circle cx="17.5" cy="8" r="2.2"/><path d="M12 10.5c-3.3 0-6 2.4-6 5.3 0 1.9 1.6 3.2 3.6 3.2.9 0 1.6-.3 2.4-.3s1.5.3 2.4.3c2 0 3.6-1.3 3.6-3.2 0-2.9-2.7-5.3-6-5.3z"/></svg></div><span class="category-card__label">Chiens <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-    <a class="category-card" href="#"><div class="tile" style="background:linear-gradient(135deg,#a85c3f,#8a4a32)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.5" cy="8" r="2.2"/><circle cx="12" cy="5.5" r="2.2"/><circle cx="17.5" cy="8" r="2.2"/><path d="M12 10.5c-3.3 0-6 2.4-6 5.3 0 1.9 1.6 3.2 3.6 3.2.9 0 1.6-.3 2.4-.3s1.5.3 2.4.3c2 0 3.6-1.3 3.6-3.2 0-2.9-2.7-5.3-6-5.3z"/></svg></div><span class="category-card__label">Chats <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-    <a class="category-card" href="#"><div class="tile" style="background:linear-gradient(135deg,#c79a44,#a8802f)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9.5-8.8C.8 8 2 4.5 5.4 3.6 8 2.9 10.3 4 12 6.5 13.7 4 16 2.9 18.6 3.6 22 4.5 23.2 8 21.5 11.2 19 15.6 12 20 12 20z"/></svg></div><span class="category-card__label">Compléments &amp; santé <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-    <a class="category-card" href="#"><div class="tile" style="background:linear-gradient(135deg,#405a49,#1b2a22)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-8 6-14 16-14 0 10-6 16-14 16H4v-2z"/><path d="M6 18C10 14 13 11 18 7"/></svg></div><span class="category-card__label">Hygiène &amp; soin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="category-card" href="#produits"><div class="tile" style="background:linear-gradient(135deg,#5b7b63,#33473c)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.5" cy="8" r="2.2"/><circle cx="12" cy="5.5" r="2.2"/><circle cx="17.5" cy="8" r="2.2"/><path d="M12 10.5c-3.3 0-6 2.4-6 5.3 0 1.9 1.6 3.2 3.6 3.2.9 0 1.6-.3 2.4-.3s1.5.3 2.4.3c2 0 3.6-1.3 3.6-3.2 0-2.9-2.7-5.3-6-5.3z"/></svg></div><span class="category-card__label">Chiens <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="category-card" href="#produits"><div class="tile" style="background:linear-gradient(135deg,#a85c3f,#8a4a32)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6.5" cy="8" r="2.2"/><circle cx="12" cy="5.5" r="2.2"/><circle cx="17.5" cy="8" r="2.2"/><path d="M12 10.5c-3.3 0-6 2.4-6 5.3 0 1.9 1.6 3.2 3.6 3.2.9 0 1.6-.3 2.4-.3s1.5.3 2.4.3c2 0 3.6-1.3 3.6-3.2 0-2.9-2.7-5.3-6-5.3z"/></svg></div><span class="category-card__label">Chats <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="category-card" href="#produits"><div class="tile" style="background:linear-gradient(135deg,#c79a44,#a8802f)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9.5-8.8C.8 8 2 4.5 5.4 3.6 8 2.9 10.3 4 12 6.5 13.7 4 16 2.9 18.6 3.6 22 4.5 23.2 8 21.5 11.2 19 15.6 12 20 12 20z"/></svg></div><span class="category-card__label">Compléments &amp; santé <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="category-card" href="#produits"><div class="tile" style="background:linear-gradient(135deg,#405a49,#1b2a22)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-8 6-14 16-14 0 10-6 16-14 16H4v-2z"/><path d="M6 18C10 14 13 11 18 7"/></svg></div><span class="category-card__label">Hygiène &amp; soin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </div>
 </section>
 
 <section>
-  <h2 class="section-heading">Nos meilleures ventes</h2>
+  <h2 class="section-heading" id="produits">Nos meilleures ventes</h2>
   <div class="product-grid">
     <div class="product-card"><div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17.5" cy="8" r="2"/><path d="M12 10.5c-3 0-5.5 2.2-5.5 4.8 0 1.7 1.4 2.9 3.3 2.9.8 0 1.4-.3 2.2-.3s1.4.3 2.2.3c1.9 0 3.3-1.2 3.3-2.9 0-2.6-2.5-4.8-5.5-4.8z"/></svg></div><div class="info"><p class="name">Croquettes Chien Adulte Poulet &amp; Riz — 2 kg</p><p class="price">24,90 €</p></div></div>
     <div class="product-card"><div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17.5" cy="8" r="2"/><path d="M12 10.5c-3 0-5.5 2.2-5.5 4.8 0 1.7 1.4 2.9 3.3 2.9.8 0 1.4-.3 2.2-.3s1.4.3 2.2.3c1.9 0 3.3-1.2 3.3-2.9 0-2.6-2.5-4.8-5.5-4.8z"/></svg></div><div class="info"><p class="name">Croquettes Chien Sans Céréales Saumon — 3 kg</p><p class="price">32,90 €</p></div></div>
@@ -204,7 +206,7 @@
       <span class="badge">Nouveau</span>
       <h3>Ne soyez plus jamais à court de croquettes</h3>
       <p>Abonnez-vous à une livraison récurrente et économisez 10 % sur chaque commande. Modifiable ou annulable à tout moment.</p>
-      <a class="btn btn--primary" href="#">Voir les produits éligibles</a>
+      <a class="btn btn--primary" href="#produits">Voir les produits éligibles</a>
     </div>
   </div>
 </section>

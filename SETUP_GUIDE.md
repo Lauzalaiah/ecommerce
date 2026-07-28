@@ -30,6 +30,8 @@ Pense à remplacer "PattesZen" par le nom de ta marque partout où il apparaît 
 
 Suis `catalog/README.md` : importer `catalog/products_import.csv` (15 produits couvrant croquettes, friandises, compléments, hygiène, accessoires). Ajuste ensuite les prix à tes coûts réels et ajoute de vraies photos (voir Étape 4 pour la source la plus simple).
 
+**Ne saute pas la création des collections** (même README, section "Collections") — sans elles, les tuiles de la page d'accueil et la section "Meilleures ventes" ne mènent nulle part.
+
 ## Étape 4 — Fournisseur / stock (le point qui a probablement bloqué la dernière fois)
 
 Suis `marketing/supplier-sourcing-alibaba-guide.md`. Résumé : le dropshipping (via DSers ou CJ Dropshipping, connectés à des fournisseurs Alibaba/AliExpress) permet de vendre **sans acheter de stock à l'avance** — ça règle directement le problème "je payais la boutique avant d'avoir des clients". Attention particulière si tu vends des croquettes/friandises : ce sont des aliments soumis à réglementation à l'import, contrairement aux accessoires — le guide détaille ce point et par où commencer sans risque (accessoires d'abord, alimentaire une fois la démarche réglementaire vérifiée).

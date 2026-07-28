@@ -6,12 +6,12 @@
     "hero": {
       "type": "hero-banner",
       "settings": {
-        "heading": "Le bien-être de votre compagnon, livré chez vous",
-        "subheading": "<p>Croquettes, friandises et soins sélectionnés pour la santé de votre chien ou chat.</p>",
+        "heading": "Une réponse précise au besoin de votre chien ou chat",
+        "subheading": "<p>Allergies, digestion sensible, articulations, anxiété : des croquettes, compléments et soins choisis pour résoudre un problème précis — pas un supermarché animalier de plus.</p>",
         "button_label": "Découvrir la boutique",
         "button_link": "/collections/all",
         "button_label_2": "Notre engagement bien-être",
-        "button_link_2": "/pages/notre-engagement"
+        "button_link_2": "/pages/a-propos"
       }
     },
     "value_props": {

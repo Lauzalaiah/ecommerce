@@ -17,3 +17,11 @@
 - **Prix** : les prix indiqués sont des repères de marché français, pas tes coûts réels. Ajuste-les selon ton prix d'achat fournisseur + marge visée (30 à 50 % de marge brute est courant sur ce secteur en dropshipping/retail).
 - **Marque (`Vendor`)** : toutes les lignes utilisent "PattesZen" comme placeholder — remplace par ton vrai nom de marque avec un rechercher-remplacer avant import, ou modifie après coup dans l'admin.
 - **Stock (`Variant Inventory Qty`)** : quantités d'exemple. Si tu pars en dropshipping (voir le guide fournisseurs), ce chiffre n'a plus vraiment de sens — désactive le suivi de stock (`Variant Inventory Tracker` → vide) pour ces produits-là.
+- **Collections (étape indispensable, sinon les liens de la page d'accueil ne mènent nulle part)** : le thème (`shopify-theme/`) affiche des tuiles "Chiens / Chats / Compléments & santé / Hygiène & soin" et une section "Meilleures ventes" — elles ont besoin de vraies collections Shopify derrière. Admin Shopify → **Produits → Collections → Créer une collection**, en automatique avec ces conditions :
+  - **Chiens** : condition `Tag` contient `chien`
+  - **Chats** : condition `Tag` contient `chat`
+  - **Compléments & santé** : condition `Type de produit` est égal à `Compléments alimentaires`
+  - **Hygiène & soin** : condition `Type de produit` est égal à `Hygiène & soin`
+  - **Meilleures ventes** : crée-la en collection **manuelle** au départ (pas de données de vente encore) et choisis toi-même 4-8 produits à mettre en avant ; tu la rendras automatique ("les plus vendus") une fois assez d'historique.
+
+  Ensuite, dans **Personnaliser le thème** : colle le lien de chaque collection dans le réglage "Lien vers la collection" du bloc correspondant (section "Univers Chien/Chat/Bien-être"), et sélectionne la collection "Meilleures ventes" dans les réglages de la section du même nom.

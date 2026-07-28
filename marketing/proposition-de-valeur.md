@@ -20,19 +20,14 @@ Où le coller : dans l'admin Shopify → Personnaliser le thème → section "B�
 
 ## 3. La spécialisation — l'expertise reconnue
 
-Déjà engagé via `strategie-sans-contenu-video.md` : être *le* spécialiste d'un problème précis plutôt qu'une boutique généraliste.
-
-> **Exemple de titre principal (section Hero, page d'accueil)**
-> Des solutions précises pour les chiens et chats aux besoins spécifiques — allergies, articulations, digestion sensible. Pas un supermarché animalier de plus.
-
-Où le coller : `shopify-theme/sections/hero-banner.liquid`, réglage "Titre" et "Sous-titre" dans l'éditeur de thème.
+Déjà engagé via `strategie-sans-contenu-video.md` : être *le* spécialiste d'un problème précis plutôt qu'une boutique généraliste. **Déjà appliqué par défaut** dans `shopify-theme/templates/index.json` et les réglages du Hero — le titre de la page d'accueil est maintenant "Une réponse précise au besoin de votre chien ou chat", plus le sous-titre nommant les problèmes concrets (allergies, digestion, articulations, anxiété). Tu peux l'ajuster dans l'éditeur de thème si tu veux reformuler, mais tu n'as plus à le faire depuis zéro.
 
 ## 4. La signature personnelle — l'histoire d'origine
 
 > **Texte pour une page "À propos" (Boutique en ligne → Pages → Ajouter une page)**
 > Cette boutique n'est pas tenue par une entreprise anonyme. Je m'appelle [ton prénom], et [nom de ton animal] a eu [problème précis rencontré] il y a quelques années — j'ai mis longtemps à trouver des produits qui fonctionnent vraiment, sans avoir à tout essayer au hasard. C'est pour ça que cette boutique existe : des produits que j'ai vérifiés moi-même, pour des problèmes que je connais.
 
-Remplis les crochets avec ta vraie histoire — c'est ce qui rend ce texte crédible, pas la formulation.
+Remplis les crochets avec ta vraie histoire — c'est ce qui rend ce texte crédible, pas la formulation. **Important** : le bouton secondaire du Hero pointe vers `/pages/a-propos` — quand tu crées la page, Shopify génère normalement cette même URL à partir du titre "À propos", mais vérifie-le (Boutique en ligne → Pages → ta page → l'URL affichée en bas) et corrige le réglage "Lien du bouton secondaire" du Hero si l'URL générée diffère.
 
 ## 5. Le service personnalisé — la présence après-vente
 

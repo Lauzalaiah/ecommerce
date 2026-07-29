@@ -32,6 +32,10 @@ Dépôt GitHub → **Settings → Secrets and variables → Actions → New repo
 
 Onglet **Actions** → workflow "Publication automatique réseaux sociaux" → **Run workflow** → vérifie sur ta Page que le post est bien apparu.
 
+### Planning en pause
+
+Le déclenchement automatique (lundi/mercredi/vendredi) est actuellement **désactivé** dans `.github/workflows/social-auto-post.yml` — sans les secrets ci-dessus, il échouait à chaque fois et générait des notifications inutiles. Le workflow reste utilisable manuellement (**Run workflow**) en attendant. Une fois les 3 secrets ajoutés, retire le `#` devant les 2 lignes `schedule`/`cron` du fichier pour réactiver le planning automatique.
+
 ### Limite à connaître
 
 Instagram exige une photo pour publier — tant que `image_url` est vide dans `content_calendar.json`, seul Facebook reçoit le post (le script le signale dans les logs). Ajoute l'URL dès que tu as de vraies photos produit.

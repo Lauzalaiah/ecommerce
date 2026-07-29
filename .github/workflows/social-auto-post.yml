@@ -1,8 +1,11 @@
 name: Publication automatique réseaux sociaux
 
 on:
-  schedule:
-    - cron: "0 9 * * 1,3,5"
+  # Planning en pause tant que les secrets Meta (FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN)
+  # ne sont pas configures - voir automation/README.md section 1.
+  # Une fois fait, decommente les 2 lignes "schedule"/"cron" ci-dessous.
+  # schedule:
+  #   - cron: "0 9 * * 1,3,5"
   workflow_dispatch: {}
 
 jobs:

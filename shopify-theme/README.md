@@ -43,6 +43,8 @@ Même vigilance sur la section **Avis clients** : les faux avis sont expliciteme
 
 De même pour la **Barre d'annonce** ("Livraison offerte dès 39€", etc.) : n'affiche que des conditions que tu appliques réellement.
 
+**Point de vigilance spécifique** : plusieurs textes par défaut promettent "Livraison 24-48h" et "Expédié depuis la France" (hero, engagements, bénéfices produit, réassurance). Ces textes sont **vrais uniquement** si tu stockes/expédies toi-même depuis la France ou via un entrepôt européen. Si tu choisis le dropshipping direct depuis l'Asie (Option A dans `../marketing/supplier-sourcing-alibaba-guide.md`, délais réels de 1 à 3 semaines), ces deux affirmations deviennent fausses et retombent sous le même risque L.132-2 que les avis inventés — remplace-les par une formulation honnête (ex. "Expédition sous 5-15 jours ouvrés") avant de publier. C'est le seul vrai point de friction entre le catalogue/thème et le choix de fournisseur : à trancher avant le lancement, pas après.
+
 ## Fonctionnalités qui nécessitent une app (pas du thème)
 
 - **Abonnement / livraison récurrente des croquettes** : la section `subscribe-save.liquid` ne fait que présenter l'offre ; la logique de facturation récurrente nécessite une app comme *Shopify Subscriptions* (gratuite) ou *Recharge*.

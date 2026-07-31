@@ -18,7 +18,7 @@ Tu ne stockes rien : le fournisseur expédie directement au client final quand u
 4. Commande d'abord un échantillon toi-même pour vérifier la qualité réelle avant de le proposer à tes clients.
 
 **Avantage direct pour ton problème initial** : zéro argent immobilisé en stock, donc zéro risque de te retrouver à payer une boutique pleine de produits invendus.
-**Inconvénient à connaître** : délais de livraison souvent plus longs (1-3 semaines depuis l'Asie, sauf entrepôts européens sur CJ Dropshipping) — à annoncer clairement sur ta boutique pour ne pas décevoir.
+**Inconvénient à connaître** : délais de livraison souvent plus longs (1-3 semaines depuis l'Asie, sauf entrepôts européens sur CJ Dropshipping) — à annoncer clairement sur ta boutique pour ne pas décevoir. **Si tu choisis cette option, va corriger les textes "Livraison 24-48h" et "Expédié depuis la France" laissés par défaut dans le thème** (`../shopify-theme/README.md`, section "Point de vigilance") — sinon la boutique affiche une promesse fausse, avec le même risque légal que les avis inventés.
 
 ### Option B — Achat en gros, tu gères le stock et l'envoi
 

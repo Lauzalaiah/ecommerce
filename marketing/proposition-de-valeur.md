@@ -25,9 +25,9 @@ Déjà engagé via `strategie-sans-contenu-video.md` : être *le* spécialiste d
 ## 4. La signature personnelle — l'histoire d'origine
 
 > **Texte pour une page "À propos" (Boutique en ligne → Pages → Ajouter une page)**
-> Cette boutique n'est pas tenue par une entreprise anonyme. Je m'appelle [ton prénom], et [nom de ton animal] a eu [problème précis rencontré] il y a quelques années — j'ai mis longtemps à trouver des produits qui fonctionnent vraiment, sans avoir à tout essayer au hasard. C'est pour ça que cette boutique existe : des produits que j'ai vérifiés moi-même, pour des problèmes que je connais.
+> Cette boutique n'est pas tenue par une entreprise anonyme. Je m'appelle Léo, et [nom de ton animal] a eu [problème précis rencontré] il y a quelques années — j'ai mis longtemps à trouver des produits qui fonctionnent vraiment, sans avoir à tout essayer au hasard. C'est pour ça que cette boutique existe : des produits que j'ai vérifiés moi-même, pour des problèmes que je connais.
 
-Remplis les crochets avec ta vraie histoire — c'est ce qui rend ce texte crédible, pas la formulation. **Important** : le bouton secondaire du Hero pointe vers `/pages/a-propos` — quand tu crées la page, Shopify génère normalement cette même URL à partir du titre "À propos", mais vérifie-le (Boutique en ligne → Pages → ta page → l'URL affichée en bas) et corrige le réglage "Lien du bouton secondaire" du Hero si l'URL générée diffère.
+Il ne reste que 2 crochets à remplir (le nom de ton animal et le problème précis) — c'est ce détail concret, pas la formulation autour, qui rend le texte crédible. **Important** : le bouton secondaire du Hero pointe vers `/pages/a-propos` — quand tu crées la page, Shopify génère normalement cette même URL à partir du titre "À propos", mais vérifie-le (Boutique en ligne → Pages → ta page → l'URL affichée en bas) et corrige le réglage "Lien du bouton secondaire" du Hero si l'URL générée diffère.
 
 ## 5. Le service personnalisé — la présence après-vente
 

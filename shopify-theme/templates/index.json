@@ -1,7 +1,7 @@
 {
   "sections": {
     "announcement": {
-      "type": "announcement-bar"
+      "type": "pz-announcement-bar"
     },
     "hero": {
       "type": "hero-banner",
@@ -40,7 +40,7 @@
       "type": "trust-badges"
     },
     "newsletter": {
-      "type": "newsletter"
+      "type": "pz-newsletter"
     }
   },
   "order": [

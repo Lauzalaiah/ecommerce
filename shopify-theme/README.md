@@ -1,22 +1,31 @@
 # Thème Shopify — PattesZen (bien-être animal)
 
-Ce dossier n'est **pas** un thème Shopify complet (recréer tout le moteur de panier, la recherche, les filtres, etc. depuis zéro n'a aucun intérêt : Shopify fournit déjà tout ça gratuitement et à jour). C'est un **pack de personnalisation** conçu pour être posé sur le thème gratuit officiel de Shopify — **Horizon** ou **Dawn** selon celui que Shopify te propose actuellement (les deux suivent la même architecture Online Store 2.0, les instructions ci-dessous marchent pour les deux).
+Ce dossier contient nos sections/snippets/templates personnalisés — pas un thème complet en soi (recréer le panier, la recherche, les filtres depuis zéro n'a aucun intérêt : Shopify fournit déjà tout ça). Deux façons de les installer : un **zip prêt à uploader** (le plus simple) ou un **copier-coller manuel** (si tu préfères éditer à la main ou mettre à jour plus tard).
 
-## ⚠️ N'upload jamais ce dépôt (ni même ce dossier) comme fichier zip dans "Upload theme"
+## Méthode 1 — Zip prêt à l'emploi (recommandée)
 
-Ce n'est pas un thème autonome — il lui manque volontairement `layout/theme.liquid` et toute la structure de base (déjà fournie par Horizon/Dawn). Uploader un zip de ce dépôt donne l'erreur *"zip does not contain a valid theme: missing template layout/theme.liquid"*. La bonne méthode est un copier-coller dans l'éditeur de code du thème déjà installé, détaillée ci-dessous.
+`shopify-theme/dist/patteszen-theme.zip` (envoyé séparément, généré par `build_theme_zip.py`) est un **vrai thème Shopify complet et valide** : le thème **Dawn officiel de Shopify, tel quel, avec nos fichiers déjà intégrés dedans** — pas juste notre dossier. Il s'installe normalement :
 
-## Installation (copier-coller dans l'éditeur de code, pas d'upload de zip)
+1. Admin Shopify → **Boutique en ligne → Thèmes → Ajouter un thème → Charger un fichier zip** → sélectionne `patteszen-theme.zip`.
+2. Le thème s'ajoute à ta bibliothèque sous le nom "PattesZen (Dawn)", **non publié par défaut** — clique sur **Personnaliser** pour le prévisualiser avant de le rendre visible aux visiteurs.
+3. Remplace les textes/images placeholder par les tiens directement dans l'éditeur (aucun code à toucher).
+4. Une fois satisfait → **⋯ → Publier**.
 
-1. Le thème gratuit (Horizon ou Dawn) doit déjà être présent dans **Boutique en ligne → Thèmes** — sinon installe-le depuis la bibliothèque de thèmes gratuits de Shopify.
-2. Sur ce thème → **⋯** → **Modifier le code**. Ajoute les fichiers **dans cet ordre précis** (les sections/templates référencent les snippets, donc les snippets d'abord) :
+Régénérer le zip (si nos fichiers changent) : `python3 shopify-theme/build_theme_zip.py` — ça retélécharge la dernière version officielle de Dawn et refait la fusion à chaque exécution.
+
+## Méthode 2 — Copier-coller manuel (sur un thème déjà installé)
+
+Utile si tu as déjà Horizon/Dawn installé et actif et que tu préfères ajouter les fichiers un par un plutôt que d'ajouter un thème séparé.
+
+**⚠️ N'upload jamais `shopify-theme/` seul comme fichier zip** — il lui manque `layout/theme.liquid` et toute la structure de base (fournie par le zip complet de la Méthode 1), ça donne l'erreur *"zip does not contain a valid theme"*.
+
+1. Sur le thème installé → **⋯** → **Modifier le code**. Ajoute les fichiers **dans cet ordre précis** (les sections/templates référencent les snippets, donc les snippets d'abord) :
    1. **Snippets** → **Ajouter un nouveau snippet** → nomme-le exactement `icon-paw` (sans `.liquid`, Shopify l'ajoute automatiquement) → colle le contenu de `shopify-theme/snippets/icon-paw.liquid`. Répète pour `icon-benefit`.
-   2. **Sections** → **Ajouter une nouvelle section** pour chacun de ces noms exacts, en collant le contenu du fichier `.liquid` correspondant : `hero-banner`, `value-props`, `featured-categories`, `subscribe-save`, `testimonials`, `trust-badges`, `newsletter`, `product-benefits`, `faq-accordion`, `announcement-bar`.
-   3. **Templates** → ouvre `index.json` (déjà existant) → remplace tout son contenu par celui de `shopify-theme/templates/index.json`. Fais pareil pour `product.json`, et crée `page.contact.json` si tu veux la page contact prête à l'emploi (sinon le thème garde sa page contact par défaut).
-3. Sauvegarde, puis **Personnaliser le thème** pour vérifier que la page d'accueil propose maintenant : **Barre d'annonce**, **Hero bien-être**, **Nos engagements**, **Univers Chien/Chat/Bien-être**, **Meilleures ventes**, **Abonnement croquettes**, **Avis clients**, **Réassurance**, **Newsletter**.
-4. Remplace les textes/images placeholder par les tiens directement dans l'éditeur (aucun code à toucher pour cette partie).
+   2. **Sections** → **Ajouter une nouvelle section** pour chacun de ces noms exacts, en collant le contenu du fichier `.liquid` correspondant : `hero-banner`, `value-props`, `featured-categories`, `subscribe-save`, `testimonials`, `trust-badges`, `pz-newsletter`, `product-benefits`, `faq-accordion`, `pz-announcement-bar`. Les préfixes `pz-` sont volontaires : Dawn a déjà ses propres fichiers `announcement-bar` et `newsletter` utilisés par le header/footer — les nommer pareil écraserait ceux de Dawn et casserait le header du thème.
+   3. **Templates** → ouvre `index.json` (déjà existant) → remplace tout son contenu par celui de `shopify-theme/templates/index.json`. Fais pareil pour `product.json` (fusionne nos 3 sections en plus des siennes plutôt que d'écraser, sinon tu perds le sélecteur de variantes/bouton d'achat de Dawn), et `page.contact.json`.
+2. Sauvegarde, puis **Personnaliser le thème** pour vérifier que la page d'accueil propose maintenant : **Barre d'annonce**, **Hero bien-être**, **Nos engagements**, **Univers Chien/Chat/Bien-être**, **Meilleures ventes**, **Abonnement croquettes**, **Avis clients**, **Réassurance**, **Newsletter**.
 
-Beaucoup de copier-coller : si tu as accès à un ordinateur, fais cette étape dessus plutôt que sur mobile, c'est nettement plus confortable. Ça reste faisable au téléphone, juste plus lent.
+Beaucoup de copier-coller : si tu as accès à un ordinateur, fais cette étape dessus plutôt que sur mobile, c'est nettement plus confortable.
 
 ## Look plus premium — ce qui a changé
 

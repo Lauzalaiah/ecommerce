@@ -9,7 +9,7 @@ Ce dépôt contient tout ce qu'il faut pour relancer une boutique Shopify dédi�
 | Dossier | Contenu | Statut |
 |---|---|---|
 | `fast-start/` | Vendre en moins d'une heure (lien Stripe) + page de liste d'attente déjà en ligne | Prêt à l'emploi, déjà publié |
-| `shopify-theme/` | Sections et templates Liquid (Online Store 2.0) à poser sur le thème gratuit Dawn | Prêt à l'emploi |
+| `shopify-theme/` | Sections et templates Liquid (Online Store 2.0) à poser sur le thème gratuit Horizon/Dawn — copier-coller, pas d'upload zip | Prêt à l'emploi |
 | `catalog/` | Catalogue produits (CSV) importable directement dans Shopify | Prêt à l'emploi, prix à ajuster |
 | `marketing/` | Plan d'acquisition client, calendrier réseaux sociaux, pubs, emails, SEO, sourcing fournisseurs, message de reconnexion fournisseur | Prêt à l'emploi |
 | `automation/` | Deux agents : publication auto 3x/semaine (Facebook/Instagram) + recherche automatique de prospects locaux (Google Places) | Prêt, à connecter à tes comptes |

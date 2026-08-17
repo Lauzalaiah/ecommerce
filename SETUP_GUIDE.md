@@ -20,7 +20,7 @@ Aucune valeur à choisir toi-même pour les comptes à créer (Google Form, Shop
 
 ## Étape 2 — Thème de la boutique
 
-Suis `shopify-theme/README.md` : installer Dawn (gratuit) puis y déposer les fichiers de `shopify-theme/sections/`, `shopify-theme/snippets/` et `shopify-theme/templates/`. Résultat : une page d'accueil et une page produit orientées bien-être animal (hero, engagements, univers chien/chat, meilleures ventes, abonnement, avis, réassurance, newsletter, FAQ), toutes personnalisables sans code depuis l'éditeur de thème.
+Suis `shopify-theme/README.md` (⚠️ ne pas uploader ce dépôt comme fichier zip — ça échoue, la méthode est un copier-coller dans l'éditeur de code) : sur le thème gratuit déjà installé (Horizon ou Dawn), colle les fichiers de `shopify-theme/sections/`, `shopify-theme/snippets/` et `shopify-theme/templates/` un par un. Résultat : une page d'accueil et une page produit orientées bien-être animal (hero, engagements, univers chien/chat, meilleures ventes, abonnement, avis, réassurance, newsletter, FAQ), toutes personnalisables sans code depuis l'éditeur de thème.
 
 Une fois le thème posé, remplis les textes avec `marketing/proposition-de-valeur.md` (page À propos, titre du hero, bénéfices produit) — c'est ce qui différencie la boutique d'un dropshipping anonyme.
 

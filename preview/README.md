@@ -10,7 +10,7 @@ Une maquette statique qui assemble les sections de `shopify-theme/` (barre d'ann
 
 ## Comment voir le rendu exact et fonctionnel
 
-Cette maquette approche le design mais ne peut pas reproduire exactement Dawn (polices, grille, boutons, panier réels). Pour voir le résultat exact et fonctionnel :
+Cette maquette approche le design mais ne peut pas reproduire exactement le thème Horizon/Dawn réel (polices, grille, boutons, panier réels). Pour voir le résultat exact et fonctionnel :
 1. Installe le thème selon `../shopify-theme/README.md`.
 2. Admin Shopify → **Boutique en ligne → Thèmes → Personnaliser** → aperçu en direct, avec tes vraies couleurs/photos/produits.
 3. Utilise le lien "Aperçu" (avant de publier) pour partager ce rendu réel avec d'autres personnes sans le rendre public.

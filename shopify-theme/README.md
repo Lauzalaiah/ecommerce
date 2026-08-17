@@ -1,18 +1,22 @@
 # Thème Shopify — PattesZen (bien-être animal)
 
-Ce dossier n'est **pas** un thème Shopify complet (recréer tout le moteur de panier, la recherche, les filtres, etc. depuis zéro n'a aucun intérêt : Shopify fournit déjà tout ça gratuitement et à jour). C'est un **pack de personnalisation** conçu pour être posé sur **Dawn**, le thème gratuit officiel de Shopify (Online Store 2.0), en 15-20 minutes.
+Ce dossier n'est **pas** un thème Shopify complet (recréer tout le moteur de panier, la recherche, les filtres, etc. depuis zéro n'a aucun intérêt : Shopify fournit déjà tout ça gratuitement et à jour). C'est un **pack de personnalisation** conçu pour être posé sur le thème gratuit officiel de Shopify — **Horizon** ou **Dawn** selon celui que Shopify te propose actuellement (les deux suivent la même architecture Online Store 2.0, les instructions ci-dessous marchent pour les deux).
 
-## Installation
+## ⚠️ N'upload jamais ce dépôt (ni même ce dossier) comme fichier zip dans "Upload theme"
 
-1. Dans l'admin Shopify → **Boutique en ligne** → **Thèmes** → **Explorer la bibliothèque de thèmes gratuits** → installe **Dawn**.
-2. Via le Shopify CLI (`shopify theme dev` / `shopify theme push`) ou l'éditeur de code du thème dans l'admin, copie les fichiers de ce dossier dans la structure équivalente du thème Dawn :
-   - `sections/*.liquid` → `sections/`
-   - `snippets/*.liquid` → `snippets/`
-   - `templates/*.json` → `templates/` (remplace ou fusionne avec l'existant, notamment `templates/index.json`)
+Ce n'est pas un thème autonome — il lui manque volontairement `layout/theme.liquid` et toute la structure de base (déjà fournie par Horizon/Dawn). Uploader un zip de ce dépôt donne l'erreur *"zip does not contain a valid theme: missing template layout/theme.liquid"*. La bonne méthode est un copier-coller dans l'éditeur de code du thème déjà installé, détaillée ci-dessous.
 
-Tous les textes de ces sections (titres, avis, FAQ, badges) sont éditables directement depuis **Personnaliser le thème**, sans toucher au code ni aux fichiers de traduction.
-3. Dans l'éditeur de thème (Personnaliser), la page d'accueil doit maintenant proposer les sections : **Barre d'annonce**, **Hero bien-être**, **Nos engagements**, **Univers Chien/Chat/Bien-être**, **Meilleures ventes**, **Abonnement croquettes**, **Avis clients**, **Réassurance**, **Newsletter**.
-4. Remplace les textes/images placeholder par les tiens directement dans l'éditeur (aucun code à toucher).
+## Installation (copier-coller dans l'éditeur de code, pas d'upload de zip)
+
+1. Le thème gratuit (Horizon ou Dawn) doit déjà être présent dans **Boutique en ligne → Thèmes** — sinon installe-le depuis la bibliothèque de thèmes gratuits de Shopify.
+2. Sur ce thème → **⋯** → **Modifier le code**. Ajoute les fichiers **dans cet ordre précis** (les sections/templates référencent les snippets, donc les snippets d'abord) :
+   1. **Snippets** → **Ajouter un nouveau snippet** → nomme-le exactement `icon-paw` (sans `.liquid`, Shopify l'ajoute automatiquement) → colle le contenu de `shopify-theme/snippets/icon-paw.liquid`. Répète pour `icon-benefit`.
+   2. **Sections** → **Ajouter une nouvelle section** pour chacun de ces noms exacts, en collant le contenu du fichier `.liquid` correspondant : `hero-banner`, `value-props`, `featured-categories`, `subscribe-save`, `testimonials`, `trust-badges`, `newsletter`, `product-benefits`, `faq-accordion`, `announcement-bar`.
+   3. **Templates** → ouvre `index.json` (déjà existant) → remplace tout son contenu par celui de `shopify-theme/templates/index.json`. Fais pareil pour `product.json`, et crée `page.contact.json` si tu veux la page contact prête à l'emploi (sinon le thème garde sa page contact par défaut).
+3. Sauvegarde, puis **Personnaliser le thème** pour vérifier que la page d'accueil propose maintenant : **Barre d'annonce**, **Hero bien-être**, **Nos engagements**, **Univers Chien/Chat/Bien-être**, **Meilleures ventes**, **Abonnement croquettes**, **Avis clients**, **Réassurance**, **Newsletter**.
+4. Remplace les textes/images placeholder par les tiens directement dans l'éditeur (aucun code à toucher pour cette partie).
+
+Beaucoup de copier-coller : si tu as accès à un ordinateur, fais cette étape dessus plutôt que sur mobile, c'est nettement plus confortable. Ça reste faisable au téléphone, juste plus lent.
 
 ## Look plus premium — ce qui a changé
 
@@ -22,9 +26,9 @@ Tous les textes de ces sections (titres, avis, FAQ, badges) sont éditables dire
 - **Cartes (avis, engagements)** : ombre et léger effet au survol, coins arrondis cohérents.
 - **Urgence honnête sur la fiche produit** : la section "Bénéfices produit" peut afficher "Plus que X en stock" — activable dans ses réglages, basé sur le vrai stock Shopify (pas un chiffre inventé).
 
-## Pourquoi Dawn et pas un thème 100 % custom
+## Pourquoi Horizon/Dawn et pas un thème 100 % custom
 
-Dawn est maintenu par Shopify, mis à jour en continu (accessibilité, vitesse, Core Web Vitals), et gratuit. Un thème 100 % fait main demande de réécrire le panier AJAX, la recherche prédictive, les filtres de collection, etc. — des semaines de travail pour réinventer ce que Dawn fait déjà bien. Les fichiers ici se concentrent sur ce qui différencie réellement ta boutique : la mise en avant du positionnement bien-être animal.
+Ces thèmes sont maintenus par Shopify, mis à jour en continu (accessibilité, vitesse, Core Web Vitals), et gratuits. Un thème 100 % fait main demande de réécrire le panier AJAX, la recherche prédictive, les filtres de collection, etc. — des semaines de travail pour réinventer ce qu'ils font déjà bien. Les fichiers ici se concentrent sur ce qui différencie réellement ta boutique : la mise en avant du positionnement bien-être animal.
 
 ## Personnalisation rapide des couleurs/police
 

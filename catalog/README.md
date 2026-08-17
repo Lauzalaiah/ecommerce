@@ -1,6 +1,8 @@
 # Catalogue produits — `products_import.csv`
 
-15 produits prêts à importer, couvrant les rayons classiques d'une animalerie physique : croquettes chien/chat (avec variantes de poids), friandises, compléments alimentaires, hygiène & soin, accessoires bien-être.
+19 produits prêts à importer, couvrant les rayons classiques d'une animalerie physique : croquettes chien/chat (avec variantes de poids), friandises, compléments alimentaires, hygiène & soin, accessoires bien-être.
+
+**Pour démarrer, priorise les accessoires** (tapis rafraîchissant, fontaine à eau, lick mat, nettoie-pattes, jouet distributeur, diffuseur de phéromones) plutôt que les croquettes — voir `../marketing/etude-marche-toys-vs-food.md` : meilleures marges, aucune contrainte réglementaire alimentaire, pas de risque de fausse promesse de livraison en dropshipping. Garde 2-4 produits alimentaires si tu as une vraie solution de stock/livraison rapide, réintroduis le reste une fois la boutique lancée et la confiance installée.
 
 ## Importer dans Shopify
 

@@ -28,7 +28,7 @@ Pense à remplacer "PattesZen" par le nom de ta marque partout où il apparaît 
 
 ## Étape 3 — Catalogue produits
 
-Suis `catalog/README.md` : importer `catalog/products_import.csv` (15 produits couvrant croquettes, friandises, compléments, hygiène, accessoires). Ajuste ensuite les prix à tes coûts réels et ajoute de vraies photos (voir Étape 4 pour la source la plus simple).
+Suis `catalog/README.md` : importer `catalog/products_import.csv` (19 produits couvrant croquettes, friandises, compléments, hygiène, accessoires). **Priorise les accessoires pour démarrer** (voir `marketing/etude-marche-toys-vs-food.md`) — meilleures marges, zéro contrainte réglementaire, pas de risque de fausse promesse de livraison. Ajuste ensuite les prix à tes coûts réels et ajoute de vraies photos (voir Étape 4 pour la source la plus simple).
 
 **Ne saute pas la création des collections** (même README, section "Collections") — sans elles, les tuiles de la page d'accueil et la section "Meilleures ventes" ne mènent nulle part.
 
